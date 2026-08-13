@@ -1,25 +1,23 @@
 export const profile = {
-  name: 'Lizhe Chen',
-  nameZh: '陈立哲',
-  title: 'Graphics & Vision-Language Models · M.S. Student',
-  titleZh: '图形学 & 视觉语言模型 · 硕士研究生',
-  affiliation: 'M.S. Student · Interactive Media Technology · Tsinghua University',
-  affiliationZh: '硕士研究生 · 互动媒体技术 · 清华大学',
+  name: 'Rang Xiao',
+  nameZh: '肖壤',
+  title: 'Computer Science Student · Game Developer',
+  titleZh: '计算机科学与技术本科生 · 游戏开发者',
+  affiliation: 'Shanghai Jiao Tong University · Computer Science and Technology (IEEE Pilot Class)',
+  affiliationZh: '上海交通大学 · 计算机科学与技术（IEEE 试点班）',
   thesis:
-    'Hi, welcome to my site. I am a master student at Tsinghua University. My research centers on computer graphics (real-time rendering, 3D representation, and GPU systems) and vision-language models (reasoning, multimodal understanding, and how visual structure affects model behavior).',
+    'I am an undergraduate student at Shanghai Jiao Tong University, interested in game development, graphics programming, and interactive experiences.',
   thesisZh:
-    '你好，欢迎来到我的主页。我是清华大学深圳国际研究生院硕士研究生，研究重心在计算机图形学（实时渲染、三维表示与 GPU 系统）与视觉语言模型（推理、多模态理解以及视觉结构如何影响模型行为）。',
+    '我就读于上海交通大学计算机科学与技术（IEEE 试点班），关注游戏开发、图形学编程与交互体验。',
   about:
-    'On the graphics side, I build engines, renderers, and visualization tools to make pipelines inspectable. On the VLM side, I work on problems such as reasoning efficiency, graph-structured inputs, and forgery detection where fine-grained visual cues matter. Indie game projects are where many of these ideas meet production constraints.',
+    'I build game projects with Unity and C#, from gameplay systems to save and localization workflows. I enjoy turning unusual interaction ideas into playable prototypes, and keep learning through graphics coursework and game competitions.',
   aboutZh:
-    '在图形方向，我通过引擎、渲染器与可视化工具把管线做成可观察、可实验的系统。在 VLM 方向，我关注推理效率、图结构输入、以及深度伪造检测等依赖细粒度视觉线索的问题。独立游戏制作则让这些想法在真实生产约束下接受检验。',
-  interests: ['Neural Rendering', 'GPU Parallel Computing', 'Large-scale Graphics Engineering', 'VLM & Multimodal Reasoning', 'Embodied AI'],
-  interestsZh: ['神经渲染', 'GPU 并行计算', '大规模图形学工程', 'VLM 与多模态推理', '具身智能'],
-  emails: ['chenlizheme@outlook.com', 'chenlizhe@mails.tsinghua.edu.cn'],
+    '我使用 Unity 与 C# 开发游戏，从核心玩法到存档、本地化等系统都持续实践。我喜欢把有趣的交互想法做成可玩的原型，并通过图形学课程与游戏赛事不断学习。',
+  interests: ['Game Development', 'Unity', 'C#', 'Computer Graphics', 'Interactive Design'],
+  interestsZh: ['游戏开发', 'Unity', 'C#', '计算机图形学', '交互设计'],
+  emails: ['grinner0215@163.com'],
   links: [
-    { label: 'GitHub', url: 'https://github.com/ChenlizheMe' },
-    { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=E7pKucIAAAAJ' },
-    { label: 'Blog', url: 'https://dreamerchen.com' },
+    { label: 'GitHub', url: 'https://github.com/Nikolameow' },
     { label: 'CV', url: '/attaches/CV.pdf' }
   ]
 };
@@ -94,22 +92,22 @@ export const infernux = {
 
 export const researchDirections = [
   {
-    title: 'Neural rendering, GPU parallelism & large-scale graphics',
-    titleZh: '神经渲染、GPU 并行与大规模图形工程',
-    body: 'Radiance fields / splats, OptiX-class ray tracing, and the kind of CUDA–warp parallel patterns you need when scenes, sensors, or batch sizes stop being toy-sized—plus the engineering discipline to keep a big renderer maintainable.',
-    bodyZh: '辐射场与高斯泼溅、OptiX 类光追，以及场景/传感器/批量一大就不够玩的 CUDA–warp 并行套路；再加上把大型渲染管线做成可维护工程的那套习惯。'
+    title: 'Game development',
+    titleZh: '游戏开发',
+    body: 'Gameplay programming and systems development with Unity and C#, from interaction mechanics to save data and localization.',
+    bodyZh: '使用 Unity 与 C# 进行玩法编程和系统开发，覆盖交互机制、存档与本地化等环节。'
   },
   {
-    title: 'Vision-language models',
-    titleZh: '视觉语言模型',
-    body: 'Reasoning efficiency, multimodal grounding, graph-structured prompts, and vision-heavy security tasks (e.g., forgery detection) where visual detail changes the decision boundary.',
-    bodyZh: '推理效率、多模态对齐、图结构提示，以及深度伪造检测等视觉细节会改变决策边界的视觉密集型任务。'
+    title: 'Computer graphics',
+    titleZh: '计算机图形学',
+    body: 'Learning graphics through the GAMES101 coursework, including transformations, rasterization, Blinn-Phong lighting, and ray tracing.',
+    bodyZh: '通过 GAMES101 系统学习图形学，完成 MVP 变换、软光栅渲染、Blinn-Phong 光照与光线追踪等作业。'
   },
   {
-    title: 'Games & competitions',
-    titleZh: '游戏与比赛',
-    body: 'I make games out of genuine interest—it is a hobby I take seriously. I have joined many game jams and competitions over the years and collected a long list of awards along the way.',
-    bodyZh: '做游戏是我的兴趣与爱好，我也会认真投入。这些年参加过大量游戏开发比赛与 Game Jam，拿过不少奖，是很重要的一块生活与成长经历。'
+    title: 'Game competitions',
+    titleZh: '游戏赛事',
+    body: 'Game competitions are a practical way for me to build, collaborate, and refine ideas into playable projects.',
+    bodyZh: '游戏赛事是我将想法做成可玩作品、与团队协作并持续打磨的实践方式。'
   }
 ];
 
@@ -551,46 +549,26 @@ export const awards = [
 
 export const education = [
   {
-    place: 'Tsinghua University, SIGS',
-    placeZh: '清华大学 深圳国际研究生院',
-    date: '2025 — Present',
-    dateZh: '2025年 — 至今',
-    role: 'M.S. in Interactive Media Technology',
-    roleZh: '互动媒体技术方向 · 硕士研究生',
-    desc: 'Focus: real-time rendering, engine systems, and vision-language model research; coursework bridges graphics and interactive media.',
-    descZh: '方向：实时渲染、引擎系统与视觉语言模型相关研究；课程衔接图形学与交互媒体。'
-  },
-  {
-    place: 'North China University of Technology',
-    placeZh: '北方工业大学',
-    date: '2021 — 2025',
-    dateZh: '2021年 — 2025年',
-    role: 'B.S. in Digital Media Technology · Rank 1st',
-    roleZh: '数字媒体技术 · 工学学士 · 绩点排名第一',
-    desc: 'Foundations in graphics programming, real-time engines, and ML; early VLM/LLM collaborations and competition-led game shipping.',
-    descZh: '图形编程、实时引擎与机器学习基础；早期 VLM/LLM 合作与竞赛驱动下的游戏交付。'
+    place: 'Shanghai Jiao Tong University',
+    placeZh: '上海交通大学',
+    date: 'Sep 2024 — Present',
+    dateZh: '2024年9月 — 至今',
+    role: 'B.S. in Computer Science and Technology · IEEE Pilot Class',
+    roleZh: '计算机科学与技术本科 · IEEE 试点班',
+    desc: 'Core GPA 90.25/100, GPA 3.92, ranked 30/123. Coursework includes mathematical analysis, C++, data structures and algorithms, and Python.',
+    descZh: '核心学积分 90.25/100，绩点 3.92，专业排名 30/123。主修数学分析、C++ 程序设计、数据结构与算法、Python 程序设计。'
   }
 ];
 
 export const workExperience = [
   {
-    place: 'Tencent',
-    placeZh: '腾讯',
-    date: 'Jun 12, 2026 — Present',
-    dateZh: '2026年6月12日 — 至今',
-    role: 'Engine R&D Intern',
-    roleZh: '引擎研发实习生',
-    desc: 'Engine R&D internship (in progress); day-to-day focus is neural rendering and shipping it in real engine/tooling loops.',
-    descZh: '引擎研发实习（进行中），日常工作重心在神经渲染，以及把它接进真实的引擎与工具链路里。'
-  },
-  {
-    place: 'DexForce Intelligent Digital Tech',
-    placeZh: '跨维（深圳）智能数字科技',
-    date: 'Mar — Oct 2025',
-    dateZh: '2025年3月 — 2025年10月',
-    role: 'Data Synthesis Engineer · Intern',
-    roleZh: '数据合成工程师 · 实习',
-    desc: 'Embodied AI stack: built a full multi-camera OptiX renderer and a warp-based GPU parallel layer inside EmbodiChain, plus sim/engine tooling.',
-    descZh: '具身智能栈：在 EmbodiChain 内实现完整多相机 OptiX 渲染器与基于 warp 的 GPU 并行层，并参与仿真/引擎与资产侧工具。'
+    place: 'NetEase Games · ThunderFire Studio',
+    placeZh: '网易互娱 · 雷火事业群',
+    date: 'Jun 2026 — Sep 2026',
+    dateZh: '2026年6月 — 2026年9月',
+    role: 'Game Client Development Intern · Client Tools Team, Where Winds Meet',
+    roleZh: '游戏客户端开发实习生 ·《燕云十六声》客户端工具组',
+    desc: 'Game client development internship with the client tools team for Where Winds Meet.',
+    descZh: '在《燕云十六声》客户端工具组进行游戏客户端开发实习。'
   }
 ];

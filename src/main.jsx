@@ -71,11 +71,11 @@ function InternalLink({ href, children, className, ...rest }) {
 }
 
 const DOC_TITLES = {
-  home: 'Lizhe Chen | Graphics Systems, Infernux, Rendering Tools',
-  papers: 'Publications | Lizhe Chen',
-  projects: 'Projects | Lizhe Chen',
-  games: 'Games | Lizhe Chen',
-  awards: 'Awards | Lizhe Chen'
+  home: 'Rang Xiao | Game Development Portfolio',
+  papers: 'Papers | Rang Xiao',
+  projects: 'Projects | Rang Xiao',
+  games: 'Games | Rang Xiao',
+  awards: 'Awards | Rang Xiao'
 };
 
 function usePreference(key, fallback) {
@@ -152,7 +152,7 @@ function Masthead({ lang, page, toggleLang, toggleTheme, theme }) {
         <span className="masthead__mark">LC</span>
         <span>
           <strong>{lang === 'zh' ? profile.nameZh : profile.name}</strong>
-          <small><T en="A graphics & large vision-model engineer" zh="一个图形学与视觉大模型工程师" lang={lang} /></small>
+          <small><T en="Game developer & computer science student" zh="游戏开发者与计算机科学学生" lang={lang} /></small>
         </span>
       </InternalLink>
       <nav className="masthead__nav" aria-label="Main navigation">
@@ -191,7 +191,7 @@ function Hero({ lang }) {
     <section className="section hero">
       <div className="hero__primary">
         <p className="hero__kicker">
-          <T en="GRAPHICS SYSTEMS · TSINGHUA UNIVERSITY" zh="图形系统 · 清华大学" lang={lang} />
+          <T en="GAME DEVELOPMENT · SHANGHAI JIAO TONG UNIVERSITY" zh="游戏开发 · 上海交通大学" lang={lang} />
         </p>
         <h1 className="hero__title">
           <T en={`${profile.name} · ${profile.nameZh}`} zh={`${profile.nameZh} · ${profile.name}`} lang={lang} />
@@ -204,7 +204,7 @@ function Hero({ lang }) {
         </div>
         <div className="hero__actions">
           <a className="btn btn--primary" href="#infernux">Infernux</a>
-          <InternalLink className="btn btn--quiet" href="/papers.html"><T en="Publications" zh="论文" lang={lang} /></InternalLink>
+          <InternalLink className="btn btn--quiet" href="/games.html"><T en="Game work" zh="游戏作品" lang={lang} /></InternalLink>
         </div>
         <div className="hero__contacts">
           {profile.emails.map((email) => <span key={email}>{email}</span>)}
@@ -212,7 +212,7 @@ function Hero({ lang }) {
       </div>
       <aside className="hero__aside">
         <div className="portrait">
-          <img src="/img/profile.png" alt="Lizhe Chen" />
+          <img src="/img/profile.jpg" alt="Rang Xiao" />
           <div className="portrait__meta">
             <p><T en={profile.affiliation} zh={profile.affiliationZh} lang={lang} /></p>
             <h2>{lang === 'zh' ? profile.nameZh : profile.name}</h2>
@@ -620,7 +620,7 @@ function Footer({ lang }) {
     <footer className="footer">
       <div>
         <strong>{lang === 'zh' ? profile.nameZh : profile.name}</strong>
-        <p><T en="Graphics, vision-language models, publications, and game shipping." zh="图形学、视觉语言模型、论文与游戏交付。" lang={lang} /></p>
+        <p><T en="Game development, Unity, C#, and computer graphics." zh="游戏开发、Unity、C# 与计算机图形学。" lang={lang} /></p>
       </div>
       <div className="footer-links">
         {profile.links.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}
