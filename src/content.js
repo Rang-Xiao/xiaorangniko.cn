@@ -17,7 +17,7 @@ export const profile = {
   interestsZh: ['游戏开发', 'Unity', 'C#', '计算机图形学', '交互设计'],
   emails: ['grinner0215@163.com'],
   links: [
-    { label: 'GitHub', url: 'https://github.com/Nikolameow' },
+    { label: 'GitHub', url: 'https://github.com/Rang-Xiao' },
     { label: 'CV', url: '/attaches/CV.pdf' }
   ]
 };
