@@ -186,8 +186,26 @@ export const games = [
 
 export const awards = [
   {
+    title: 'NetEase Games Campus MINI-GAME Challenge',
+    titleZh: '网易游戏高校 MINI-GAME 挑战赛',
+    date: 'Jul 2026',
+    dateZh: '2026.07',
+    result: 'Finalist',
+    resultZh: '入围决赛',
+    blurb:
+      'Over 500 teams from universities across China entered, and 32 made the finals. The final round was a 48-hour game jam, where our original entry placed third in the on-site vote.',
+    blurbZh:
+      '500 余支来自中国高校的队伍参与，32 支进入决赛。决赛采用 48h Game Jam 形式，我们的原创作品获得线下投票第三。',
+    link: 'https://mp.weixin.qq.com/s/pkc3OEa6kh4l0k7KmvEmSg',
+    linkLabel: 'Coverage',
+    linkLabelZh: '相关报道',
+    image: '/img/awards/neteaseminigame.JPG'
+  },
+  {
     title: 'Tencent LightSpeed Studios Game Competition (college track)',
     titleZh: '光子游戏大赛（高校赛道）',
+    date: 'Jul 2026',
+    dateZh: '2026.07',
     result: 'Gold award',
     resultZh: '金奖',
     blurb:
@@ -202,8 +220,10 @@ export const awards = [
   {
     title: 'SJTU Student Innovation × NetEase Thunder Fire Game Design Competition',
     titleZh: '交大学创 × 网易雷火高校游戏设计大赛',
-    result: 'First prize & Best Innovation award',
-    resultZh: '一等奖及最佳创新奖',
+    date: 'Dec 2025',
+    dateZh: '2025.12',
+    result: 'First prize & Best Creativity award',
+    resultZh: '一等奖及最佳创意奖',
     blurb:
       'Eleven teams presented and playtested their own games at the SJTU Student Innovation Center. It was the first time our team worked together, and a lovely start to it.',
     blurbZh:

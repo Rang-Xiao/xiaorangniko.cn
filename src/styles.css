@@ -1117,28 +1117,36 @@ button {
   border-top: 1px solid var(--line);
 }
 
+.award-list__date {
+  margin: 0 0 0.3rem !important;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.06em;
+  color: var(--accent) !important;
+}
+
 .award-list article h3 {
-  margin: 0 0 0.35rem;
-  font-size: 0.875rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .award-list__result {
   font-family: var(--font-mono);
-  font-size: 0.72rem !important;
+  font-size: 0.875rem !important;
   font-weight: 500;
   color: var(--fog) !important;
   letter-spacing: 0.03em;
 }
 
 .award-list__blurb {
-  margin-top: 0.5rem !important;
-  padding-top: 0.5rem;
+  margin-top: 0.55rem !important;
+  padding-top: 0.55rem;
   border-top: 1px solid var(--line);
-  font-size: 0.78rem !important;
-  color: var(--dim) !important;
-  line-height: 1.65 !important;
+  font-size: 0.9375rem !important;
+  color: var(--mist) !important;
+  line-height: 1.7 !important;
 }
 
 .award-card .award-list__blurb {
@@ -1146,8 +1154,8 @@ button {
 }
 
 .award-list__link {
-  margin-top: 0.4rem !important;
-  font-size: 0.75rem !important;
+  margin-top: 0.45rem !important;
+  font-size: 0.875rem !important;
   font-family: var(--font-mono);
 }
 
@@ -1266,15 +1274,17 @@ a.award-list__media:hover::after {
 }
 
 .award-card h3 {
-  margin: 0 0 0.35rem;
-  font-size: 0.9375rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.0625rem;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 .award-card p {
   margin: 0;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--mist);
+  line-height: 1.7;
 }
 
 /* —— Footer —— */

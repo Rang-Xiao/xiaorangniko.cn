@@ -217,11 +217,10 @@ function Home({ lang }) {
     <>
       <Hero lang={lang} />
       <ResearchAndCareer lang={lang} />
-      <HighlightFeature lang={lang} />
       <GamePreview lang={lang} />
+      <HighlightFeature lang={lang} />
       <ProjectPreview lang={lang} />
       <Honors lang={lang} />
-      <PublicationEvidence lang={lang} />
       <Footer lang={lang} />
     </>
   );
@@ -353,7 +352,7 @@ function HighlightFeature({ lang }) {
   return (
     <section className="section feature" id="highlight">
       <header className="section__head">
-        <span className="section__id">02</span>
+        <span className="section__id">03</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Highlight project" zh="代表项目" lang={lang} /></p>
           <h2 className="section__title"><T en={highlight.name} zh={highlight.nameZh} lang={lang} /></h2>
@@ -401,31 +400,6 @@ function HighlightFeature({ lang }) {
   );
 }
 
-function PublicationEvidence({ lang }) {
-  return (
-    <section className="section">
-      <header className="section__head">
-        <span className="section__id">06</span>
-        <div>
-          <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Papers" zh="论文" lang={lang} /></p>
-          <h2 className="section__title"><T en="Selected publications" zh="代表论文" lang={lang} /></h2>
-        </div>
-        <p className="section__lede">
-          <T
-            en="Write a short intro for your publications here."
-            zh="在此填写论文部分的引导语。"
-            lang={lang}
-          />
-        </p>
-      </header>
-      <div className="list-gap">
-        {publications.filter((p) => p.featured).map((paper) => <PaperCard key={paper.title} paper={paper} lang={lang} />)}
-      </div>
-      <InternalLink className="text-link" href="/papers.html"><T en="All publications" zh="全部论文" lang={lang} /></InternalLink>
-    </section>
-  );
-}
-
 function ProjectPreview({ lang }) {
   return (
     <section className="section">
@@ -455,7 +429,7 @@ function GamePreview({ lang }) {
   return (
     <section className="section">
       <header className="section__head">
-        <span className="section__id">03</span>
+        <span className="section__id">02</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Games" zh="游戏" lang={lang} /></p>
           <h2 className="section__title"><T en="Game work" zh="游戏作品" lang={lang} /></h2>
@@ -490,41 +464,49 @@ function Honors({ lang }) {
         </p>
       </header>
       <div className="award-list award-list--verbose">
-        {awards.map((item) => (
-          <article key={item.title} className={item.image ? 'award-list__item award-list__item--media' : 'award-list__item'}>
-            <div className="award-list__body">
-              <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
-              <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
-              <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
-              {item.link && !item.image && (
-                <p className="award-list__link">
-                  <a href={item.link} target="_blank" rel="noreferrer">
-                    <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
-                  </a>
-                </p>
-              )}
-            </div>
-            {item.image && (
-              item.link ? (
-                <a
-                  className="award-list__media"
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  title={lang === 'zh' ? item.linkLabelZh || '相关报道' : item.linkLabel || 'Coverage'}
-                >
-                  <img src={item.image} alt={lang === 'zh' ? item.titleZh : item.title} loading="lazy" />
-                </a>
-              ) : (
-                <div className="award-list__media">
-                  <img src={item.image} alt={lang === 'zh' ? item.titleZh : item.title} loading="lazy" />
-                </div>
-              )
-            )}
-          </article>
-        ))}
+        {awards.map((item) => <AwardItem key={item.title} item={item} lang={lang} />)}
       </div>
     </section>
+  );
+}
+
+function AwardItem({ item, lang, className = 'award-list__item' }) {
+  const media = item.image && (
+    <img src={item.image} alt={lang === 'zh' ? item.titleZh : item.title} loading="lazy" />
+  );
+  return (
+    <article className={item.image ? `${className} award-list__item--media` : className}>
+      <div className="award-list__body">
+        {(item.date || item.dateZh) && (
+          <p className="award-list__date"><T en={item.date} zh={item.dateZh} lang={lang} /></p>
+        )}
+        <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
+        <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
+        <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
+        {item.link && !item.image && (
+          <p className="award-list__link">
+            <a href={item.link} target="_blank" rel="noreferrer">
+              <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
+            </a>
+          </p>
+        )}
+      </div>
+      {media && (
+        item.link ? (
+          <a
+            className="award-list__media"
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+            title={lang === 'zh' ? item.linkLabelZh || '相关报道' : item.linkLabel || 'Coverage'}
+          >
+            {media}
+          </a>
+        ) : (
+          <div className="award-list__media">{media}</div>
+        )
+      )}
+    </article>
   );
 }
 
@@ -656,20 +638,7 @@ function ArchivePage({ page, lang }) {
       intro: 'Write a short intro for the award archive.',
       introZh: '在此填写荣誉归档页的引导语。',
       items: awards,
-      render: (item) => (
-        <article className="award-card" key={item.title}>
-          <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
-          <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
-          <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
-          {item.link && (
-            <p className="award-list__link">
-              <a href={item.link} target="_blank" rel="noreferrer">
-                <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
-              </a>
-            </p>
-          )}
-        </article>
-      )
+      render: (item) => <AwardItem key={item.title} item={item} lang={lang} className="award-card" />
     }
   }[page];
 
