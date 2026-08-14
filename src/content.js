@@ -5,19 +5,19 @@ export const profile = {
   name: 'Rang Xiao',
   nameZh: '肖壤',
   initials: 'RX',
-  title: 'Game Development & Computer Graphics',
-  titleZh: '游戏开发 & 图形学',
+  title: 'Always a gamer',
+  titleZh: '永远做一个玩家',
   affiliation: 'Shanghai Jiao Tong University · School of Computer Science',
   affiliationZh: '上海交通大学 · 计算机学院',
-  thesis: 'A game developer who loves digging into technology, building the games I care about.',
-  thesisZh: '一个喜欢钻研技术的游戏开发者，在做自己热爱的游戏',
+  thesis: 'Welcome. I am a game developer who enjoys digging into technology and building the games I love.',
+  thesisZh: '欢迎来到我的主页。我是一名游戏开发者，喜欢钻研技术，也在做自己热爱的游戏。',
   about:
-    'CS undergraduate at SJTU (IEEE Pilot Class). I work with Unity and C#/C++ across gameplay, save systems, and localization, and I keep sharpening my graphics fundamentals through rendering coursework. Currently a game client development intern at NetEase Games, on the client tools team of Where Winds Meet.',
+    'CS undergraduate at SJTU (IEEE Pilot Class). I build games with Unity and C#/C++, and have worked on fairly complex core mechanics, editor tools for designers, and a few larger systems, leading small teams along the way. Graphics is a lasting interest, and I keep learning it to push the visuals a little further. Currently interning on the client tools team of Where Winds Meet at NetEase Games, while running a small student game studio with friends.',
   aboutZh:
-    '上海交通大学计算机科学与技术（IEEE 试点班）本科在读。使用 Unity 与 C#/C++ 开发游戏，做过核心玩法、存档与本地化等系统，并通过图形学课程持续打磨渲染基础。目前在网易互娱《燕云十六声》客户端工具组做游戏客户端开发实习，同时运营一个自己的学生游戏工作室',
+    '上海交通大学计算机科学与技术（IEEE 试点班）本科在读。平时用 Unity 与 C#/C++ 做游戏，写过一些较复杂的核心玩法与策划侧工具，也参与过较大系统的开发，带过几人的小团队。对图形学一直有兴趣，希望能把画面做得更好一些。目前在网易互娱《燕云十六声》客户端工具组实习，同时和朋友一起经营一个学生游戏工作室。',
   interests: ['Unity', 'C++', 'C#'],
   interestsZh: ['Unity', 'C++', 'C#'],
-  emails: ['grinner0215@gmail.com', 'grinner0215@163.com'],
+  emails: ['grinner0215@gmail.com', 'grinner1729@sjtu.edu.cn'],
   links: [
     { label: 'GitHub', labelZh: 'GitHub', url: 'https://github.com/Rang-Xiao' },
     { label: 'Blog', labelZh: '技术博客', url: 'https://xiaorangblog.cn' },
@@ -62,17 +62,25 @@ export const researchDirections = [
     title: 'Game development',
     titleZh: '游戏开发',
     body:
-      'Unity gameplay and client systems in C#: portal-style core mechanics, save systems, and localization pipelines, shipped through jam and competition builds.',
+      'Gameplay and client systems built mainly with Unity and C#, plus editor tools that make life easier for designers.',
     bodyZh:
-      '以 Unity 与 C# 为主的玩法与客户端系统：类传送门核心机制、存档系统、本地化流程，并在比赛与实机版本中落地打磨。'
+      '以 Unity 与 C# 为主的玩法与客户端系统开发，也会做一些方便策划的编辑器工具。'
   },
   {
     title: 'Computer graphics',
     titleZh: '图形学',
     body:
-      'Rendering fundamentals from the ground up: MVP transforms, software rasterization, the Blinn-Phong lighting model, and ray tracing, alongside Unity render pipeline knowledge.',
+      'Learning rendering from the ground up: MVP transforms, software rasterization, Blinn-Phong shading, and ray tracing, while picking up Unity render pipeline knowledge.',
     bodyZh:
-      '从底层理解渲染：MVP 变换、软光栅渲染、Blinn-Phong 光照模型与光线追踪，同时补充 Unity 渲染管线相关知识。'
+      '从底层理解渲染：MVP 变换、软光栅、Blinn-Phong 光照与光线追踪，同时在补 Unity 渲染管线的知识。'
+  },
+  {
+    title: 'Computer networking',
+    titleZh: '计算机网络',
+    body:
+      'The networking side of multiplayer games: architecture and state synchronization, something I am still working my way through.',
+    bodyZh:
+      '联机游戏所需的网络架构与状态同步，还在慢慢摸索。'
   }
 ];
 
@@ -130,12 +138,30 @@ export const games = [
 
 export const awards = [
   {
-    title: 'Award or competition name',
-    titleZh: '奖项或比赛名称',
-    result: 'Result you achieved',
-    resultZh: '获得的成绩',
-    blurb: 'Write one or two sentences explaining the competition and your result.',
-    blurbZh: '用一两句话说明比赛是什么，以及你取得的成绩。'
+    title: 'Tencent Photon Game Competition (college track)',
+    titleZh: '光子游戏大赛（高校赛道）',
+    result: 'Gold award (CNY 200k prize)',
+    resultZh: '金奖（20 万元奖金）',
+    blurb:
+      'An open game-making competition hosted by Tencent Photon Studios. The 2026 edition ran for seven months and drew over 5,200 entries from studios, universities, and independent creators, with a prize pool of more than CNY 2 million. Taking gold in the college track was a real step forward for our team.',
+    blurbZh:
+      '光子面向全社会举办的游戏创作大赛。2026 届历时七个月，共有超过 5200 件作品参赛，总奖金池逾 200 万元。能在高校赛道拿到金奖，对我们团队来说是一次不小的成长。',
+    link: 'https://mp.weixin.qq.com/s/17hjCvhiTDES9XSQpdGzvw',
+    linkLabel: 'Coverage',
+    linkLabelZh: '相关报道'
+  },
+  {
+    title: 'SJTU Student Innovation × NetEase Thunder Fire Game Design Competition',
+    titleZh: '交大学创 × 网易雷火高校游戏设计大赛',
+    result: 'First prize & Best Innovation award',
+    resultZh: '一等奖及最佳创新奖',
+    blurb:
+      'Eleven teams presented and playtested their own games at the SJTU Student Innovation Center. It was the first time our team worked together, and a lovely start to it.',
+    blurbZh:
+      '11 支队伍在学生创新中心带着各自的自研游戏参加试玩会与答辩评选。这也是我们团队第一次合作，算是一个很好的开始。',
+    link: 'https://mp.weixin.qq.com/s/7Dsa782x0YqtVRijj-OC4Q',
+    linkLabel: 'Coverage',
+    linkLabelZh: '相关报道'
   }
 ];
 
@@ -148,7 +174,7 @@ export const education = [
     role: 'B.Eng. in Computer Science and Technology (IEEE Pilot Class)',
     roleZh: '本科 · 计算机科学与技术（IEEE 试点班）',
     desc:
-      'GPA 3.92, ranked top 20%. Main courses: mathematical analysis, C++ programming, data structures and algorithms, Python programming.',
+      'GPA 3.92, top 20% of the major. Main courses: mathematical analysis, C++ programming, Python programming, data structures and algorithms, operating systems.',
     descZh:
       'GPA 3.92，专业排名前 20%。主修课程：数学分析、C++ 程序设计、Python 程序设计、数据结构与算法、操作系统。'
   }

@@ -1138,6 +1138,12 @@ button {
   border-top-color: var(--line);
 }
 
+.award-list__link {
+  margin-top: 0.4rem !important;
+  font-size: 0.75rem !important;
+  font-family: var(--font-mono);
+}
+
 /* —— Archive pages —— */
 .archive-hero {
   padding: 2.5rem 0 1.5rem;

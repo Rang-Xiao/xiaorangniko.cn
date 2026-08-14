@@ -489,6 +489,13 @@ function Honors({ lang }) {
             <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
             <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
             <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
+            {item.link && (
+              <p className="award-list__link">
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
+                </a>
+              </p>
+            )}
           </article>
         ))}
       </div>
@@ -629,6 +636,13 @@ function ArchivePage({ page, lang }) {
           <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
           <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
           <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
+          {item.link && (
+            <p className="award-list__link">
+              <a href={item.link} target="_blank" rel="noreferrer">
+                <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
+              </a>
+            </p>
+          )}
         </article>
       )
     }
