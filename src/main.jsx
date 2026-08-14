@@ -79,8 +79,17 @@ const DOC_TITLES = {
   awards: 'Awards | Your Name'
 };
 
-function usePreference(key, fallback) {
-  const [value, setValue] = useState(() => localStorage.getItem(key) || fallback);
+function detectLang() {
+  const list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+  return list.some((l) => l && l.toLowerCase().startsWith('zh')) ? 'zh' : 'en';
+}
+
+function detectTheme() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function usePreference(key, detect) {
+  const [value, setValue] = useState(() => localStorage.getItem(key) || detect());
 
   useEffect(() => {
     localStorage.setItem(key, value);
@@ -89,6 +98,23 @@ function usePreference(key, fallback) {
   }, [key, value]);
 
   return [value, setValue];
+}
+
+function useSystemTheme() {
+  const [theme, setTheme] = useState(detectTheme);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = (e) => setTheme(e.matches ? 'dark' : 'light');
+    query.addEventListener('change', onChange);
+    return () => query.removeEventListener('change', onChange);
+  }, []);
+
+  return [theme, setTheme];
 }
 
 function T({ en, zh, lang }) {
@@ -100,8 +126,8 @@ function Html({ value }) {
 }
 
 function Shell() {
-  const [lang, setLang] = usePreference('lang', 'en');
-  const [theme, setTheme] = usePreference('theme', 'light');
+  const [lang, setLang] = usePreference('lang', detectLang);
+  const [theme, setTheme] = useSystemTheme();
   const [page, setPage] = useState(() => pageFromPath());
   const isHome = page === 'home';
 
@@ -153,7 +179,7 @@ function Masthead({ lang, page, toggleLang, toggleTheme, theme }) {
         <span className="masthead__mark">{profile.initials}</span>
         <span>
           <strong>{lang === 'zh' ? profile.nameZh : profile.name}</strong>
-          <small><T en="One line about you" zh="一句话介绍你自己" lang={lang} /></small>
+          <small><T en="A game developer who loves digging into technology" zh="一个热爱钻研技术的游戏开发者" lang={lang} /></small>
         </span>
       </InternalLink>
       <nav className="masthead__nav" aria-label="Main navigation">
@@ -165,7 +191,11 @@ function Masthead({ lang, page, toggleLang, toggleTheme, theme }) {
       </nav>
       <div className="masthead__actions">
         <button type="button" onClick={toggleLang}>{lang === 'en' ? '中' : 'EN'}</button>
-        <button type="button" onClick={toggleTheme}>{theme === 'dark' ? 'Light' : 'Dark'}</button>
+        <button type="button" onClick={toggleTheme}>
+          {theme === 'dark'
+            ? <T en="Light" zh="亮色模式" lang={lang} />
+            : <T en="Dark" zh="暗色模式" lang={lang} />}
+        </button>
       </div>
     </header>
   );
@@ -192,7 +222,7 @@ function Hero({ lang }) {
     <section className="section hero">
       <div className="hero__primary">
         <p className="hero__kicker">
-          <T en="YOUR FIELD · YOUR ORGANIZATION" zh="你的领域 · 你的机构" lang={lang} />
+          <T en="GAME DEVELOPMENT · COMPUTER GRAPHICS · SJTU" zh="游戏开发 · 图形学 · 上海交通大学" lang={lang} />
         </p>
         <h1 className="hero__title">
           <T en={`${profile.name} · ${profile.nameZh}`} zh={`${profile.nameZh} · ${profile.name}`} lang={lang} />
@@ -245,12 +275,12 @@ function ResearchAndCareer({ lang }) {
         <span className="section__id">01</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Focus & path" zh="方向与路径" lang={lang} /></p>
-          <h2 className="section__title"><T en="Research, school & work" zh="研究方向与学业/工作" lang={lang} /></h2>
+          <h2 className="section__title"><T en="Game development & graphics" zh="游戏与图形学" lang={lang} /></h2>
         </div>
         <p className="section__lede">
           <T
-            en="Write a short intro for this section: your main directions and how school and work fit together."
-            zh="填写本节的引导语：你的主要方向，以及学业与工作的关系。"
+            en="Game development on one side, computer graphics on the other — the timeline below is where those two threads meet school and industry."
+            zh="一边是游戏开发，一边是图形学；下面的时间线就是这两条线与学业、工作交汇的地方。"
             lang={lang}
           />
         </p>
@@ -624,7 +654,7 @@ function Footer({ lang }) {
     <footer className="footer">
       <div>
         <strong>{lang === 'zh' ? profile.nameZh : profile.name}</strong>
-        <p><T en="Write one line about yourself or this site." zh="在此填写一句关于你自己或本站的介绍。" lang={lang} /></p>
+        <p><T en="A game developer who loves digging into technology" zh="一个热爱钻研技术的游戏开发者" lang={lang} /></p>
       </div>
       <div className="footer-links">
         {profile.links.map((link) => (

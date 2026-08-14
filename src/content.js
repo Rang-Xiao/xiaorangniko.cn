@@ -2,30 +2,32 @@ export const DEMO_VIDEO =
   '//player.bilibili.com/player.html?isOutside=true&aid=115342235932775&bvid=BV1xZxzzTE85&cid=32934002860&p=1';
 
 export const profile = {
-  name: 'Your Name',
-  nameZh: '你的名字',
-  initials: 'AB',
-  title: 'Your title / role',
-  titleZh: '你的头衔 / 角色',
-  affiliation: 'Your school or organization · Your major or team',
-  affiliationZh: '你的学校或机构 · 你的专业或团队',
-  thesis: 'Write one sentence about who you are and what you do.',
-  thesisZh: '用一句话介绍你是谁、在做什么。',
-  about: 'Write a short paragraph about your background, skills, and what you are currently working on.',
-  aboutZh: '用一段话介绍你的背景、技能，以及当前正在做的事情。',
-  interests: ['Keyword'],
-  interestsZh: ['关键词'],
-  emails: ['your@email.com'],
+  name: 'Rang Xiao',
+  nameZh: '肖壤',
+  initials: 'RX',
+  title: 'Game Development & Computer Graphics',
+  titleZh: '游戏开发 & 图形学',
+  affiliation: 'Shanghai Jiao Tong University · School of Computer Science',
+  affiliationZh: '上海交通大学 · 计算机学院',
+  thesis: 'A game developer who loves digging into technology, building the games I care about.',
+  thesisZh: '一个喜欢钻研技术的游戏开发者，在做自己热爱的游戏',
+  about:
+    'CS undergraduate at SJTU (IEEE Pilot Class). I work with Unity and C#/C++ across gameplay, save systems, and localization, and I keep sharpening my graphics fundamentals through rendering coursework. Currently a game client development intern at NetEase Games, on the client tools team of Where Winds Meet.',
+  aboutZh:
+    '上海交通大学计算机科学与技术（IEEE 试点班）本科在读。使用 Unity 与 C#/C++ 开发游戏，做过核心玩法、存档与本地化等系统，并通过图形学课程持续打磨渲染基础。目前在网易互娱《燕云十六声》客户端工具组做游戏客户端开发实习，同时运营一个自己的学生游戏工作室',
+  interests: ['Unity', 'C++', 'C#'],
+  interestsZh: ['Unity', 'C++', 'C#'],
+  emails: ['grinner0215@gmail.com', 'grinner0215@163.com'],
   links: [
     { label: 'GitHub', labelZh: 'GitHub', url: 'https://github.com/Rang-Xiao' },
-    { label: 'Blog', labelZh: '博客', url: 'https://xiaorangblog.cn' },
+    { label: 'Blog', labelZh: '技术博客', url: 'https://xiaorangblog.cn' },
     { label: 'Resume', labelZh: '简历', url: '/attaches/XiaoRangResume.pdf' }
   ]
 };
 
 export const heroMetrics = [
-  { value: '00', label: 'Metric one', labelZh: '指标一' },
-  { value: '00', label: 'Metric two', labelZh: '指标二' }
+  { value: '2w+', label: 'game downloads', labelZh: '游戏下载量' },
+  { value: '30w+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
 ];
 
 export const highlight = {
@@ -57,10 +59,20 @@ export const highlight = {
 
 export const researchDirections = [
   {
-    title: 'Direction title',
-    titleZh: '方向标题',
-    body: 'Describe this direction: scope, methods, and what you focus on.',
-    bodyZh: '描述该方向：范围、方法，以及你关注的重点。'
+    title: 'Game development',
+    titleZh: '游戏开发',
+    body:
+      'Unity gameplay and client systems in C#: portal-style core mechanics, save systems, and localization pipelines, shipped through jam and competition builds.',
+    bodyZh:
+      '以 Unity 与 C# 为主的玩法与客户端系统：类传送门核心机制、存档系统、本地化流程，并在比赛与实机版本中落地打磨。'
+  },
+  {
+    title: 'Computer graphics',
+    titleZh: '图形学',
+    body:
+      'Rendering fundamentals from the ground up: MVP transforms, software rasterization, the Blinn-Phong lighting model, and ray tracing, alongside Unity render pipeline knowledge.',
+    bodyZh:
+      '从底层理解渲染：MVP 变换、软光栅渲染、Blinn-Phong 光照模型与光线追踪，同时补充 Unity 渲染管线相关知识。'
   }
 ];
 
@@ -129,26 +141,29 @@ export const awards = [
 
 export const education = [
   {
-    place: 'School name',
-    placeZh: '学校名称',
-    date: 'Start — End',
-    dateZh: '开始 — 结束',
-    role: 'Degree · Major',
-    roleZh: '学位 · 专业',
-    desc: 'Write about coursework, grades, or anything worth listing.',
-    descZh: '填写课程、成绩或其他值得列出的内容。'
+    place: 'Shanghai Jiao Tong University',
+    placeZh: '上海交通大学',
+    date: 'Sep 2024 — Present',
+    dateZh: '2024.09 — 至今',
+    role: 'B.Eng. in Computer Science and Technology (IEEE Pilot Class)',
+    roleZh: '本科 · 计算机科学与技术（IEEE 试点班）',
+    desc:
+      'GPA 3.92, ranked top 20%. Main courses: mathematical analysis, C++ programming, data structures and algorithms, Python programming.',
+    descZh:
+      'GPA 3.92，专业排名前 20%。主修课程：数学分析、C++ 程序设计、Python 程序设计、数据结构与算法、操作系统。'
   }
 ];
 
 export const workExperience = [
   {
-    place: 'Company name',
-    placeZh: '公司名称',
-    date: 'Start — End',
-    dateZh: '开始 — 结束',
-    role: 'Job title · Team',
-    roleZh: '职位 · 团队',
-    desc: 'Write about your responsibilities and what you delivered.',
-    descZh: '填写你的职责，以及交付的成果。'
+    place: 'NetEase Games',
+    placeZh: '网易互娱',
+    date: 'Jun 2026 — Sep 2026',
+    dateZh: '2026.06 — 2026.09',
+    role: 'Game Client Development Intern · Where Winds Meet, Client Tools Team',
+    roleZh: '游戏客户端开发实习 ·《燕云十六声》客户端工具组',
+    desc:
+      'Client-side development and tooling work for the Where Winds Meet client tools team.',
+    descZh: '在《燕云十六声》客户端工具组参与游戏客户端开发与工具链相关工作。'
   }
 ];

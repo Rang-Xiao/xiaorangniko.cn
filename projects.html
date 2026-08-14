@@ -6,6 +6,15 @@
     <title>Projects | Your Name</title>
     <meta name="description" content="Write a short description for the projects page." />
     <link rel="shortcut icon" href="/img/favicon.png" />
+    <script>
+      (function () {
+        var el = document.documentElement;
+        var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+        var isZh = langs.some(function (l) { return l && l.toLowerCase().indexOf('zh') === 0; });
+        el.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        el.lang = localStorage.getItem('lang') || (isZh ? 'zh' : 'en');
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
