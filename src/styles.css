@@ -584,7 +584,7 @@ button {
   line-height: 1.65;
 }
 
-/* —— Infernux —— */
+/* —— Highlight feature —— */
 .feature {
   max-width: 100%;
 }
@@ -635,14 +635,14 @@ button {
   object-fit: cover;
 }
 
-.media--infernux-video {
+.media--feature-video {
   position: relative;
   min-height: 0;
   aspect-ratio: 16 / 9;
   max-height: min(70vh, 520px);
 }
 
-.media--infernux-video iframe {
+.media--feature-video iframe {
   position: absolute;
   inset: 0;
   width: 100%;

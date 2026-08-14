@@ -5,7 +5,8 @@ import {
   awards,
   education,
   games,
-  infernux,
+  heroMetrics,
+  highlight,
   profile,
   projects,
   publications,
@@ -71,11 +72,11 @@ function InternalLink({ href, children, className, ...rest }) {
 }
 
 const DOC_TITLES = {
-  home: 'Rang Xiao | Game Development Portfolio',
-  papers: 'Papers | Rang Xiao',
-  projects: 'Projects | Rang Xiao',
-  games: 'Games | Rang Xiao',
-  awards: 'Awards | Rang Xiao'
+  home: 'Your Name | Portfolio',
+  papers: 'Papers | Your Name',
+  projects: 'Projects | Your Name',
+  games: 'Games | Your Name',
+  awards: 'Awards | Your Name'
 };
 
 function usePreference(key, fallback) {
@@ -140,19 +141,19 @@ function Shell() {
 function Masthead({ lang, page, toggleLang, toggleTheme, theme }) {
   const nav = [
     ['home', '/', 'Home', '主页'],
-    ['papers', '/papers.html', 'Papers', '论文'],
-    ['projects', '/projects.html', 'Projects', '项目'],
     ['games', '/games.html', 'Games', '游戏'],
-    ['awards', '/awards.html', 'Awards', '荣誉']
+    ['projects', '/projects.html', 'Projects', '项目'],
+    ['awards', '/awards.html', 'Awards', '荣誉'],
+    ['papers', '/papers.html', 'Papers', '论文']
   ];
 
   return (
     <header className="masthead">
       <InternalLink className="masthead__brand" href="/">
-        <span className="masthead__mark">LC</span>
+        <span className="masthead__mark">{profile.initials}</span>
         <span>
           <strong>{lang === 'zh' ? profile.nameZh : profile.name}</strong>
-          <small><T en="Game developer & computer science student" zh="游戏开发者与计算机科学学生" lang={lang} /></small>
+          <small><T en="One line about you" zh="一句话介绍你自己" lang={lang} /></small>
         </span>
       </InternalLink>
       <nav className="masthead__nav" aria-label="Main navigation">
@@ -175,11 +176,11 @@ function Home({ lang }) {
     <>
       <Hero lang={lang} />
       <ResearchAndCareer lang={lang} />
-      <InfernuxFeature lang={lang} />
-      <PublicationEvidence lang={lang} />
-      <ProjectPreview lang={lang} />
+      <HighlightFeature lang={lang} />
       <GamePreview lang={lang} />
+      <ProjectPreview lang={lang} />
       <Honors lang={lang} />
+      <PublicationEvidence lang={lang} />
       <Footer lang={lang} />
     </>
   );
@@ -191,7 +192,7 @@ function Hero({ lang }) {
     <section className="section hero">
       <div className="hero__primary">
         <p className="hero__kicker">
-          <T en="GAME DEVELOPMENT · SHANGHAI JIAO TONG UNIVERSITY" zh="游戏开发 · 上海交通大学" lang={lang} />
+          <T en="YOUR FIELD · YOUR ORGANIZATION" zh="你的领域 · 你的机构" lang={lang} />
         </p>
         <h1 className="hero__title">
           <T en={`${profile.name} · ${profile.nameZh}`} zh={`${profile.nameZh} · ${profile.name}`} lang={lang} />
@@ -203,7 +204,7 @@ function Hero({ lang }) {
           {interests.map((item) => <span key={item}>{item}</span>)}
         </div>
         <div className="hero__actions">
-          <a className="btn btn--primary" href="#infernux">Infernux</a>
+          <a className="btn btn--primary" href="#highlight"><T en="Highlight" zh="代表项目" lang={lang} /></a>
           <InternalLink className="btn btn--quiet" href="/games.html"><T en="Game work" zh="游戏作品" lang={lang} /></InternalLink>
         </div>
         <div className="hero__contacts">
@@ -212,15 +213,16 @@ function Hero({ lang }) {
       </div>
       <aside className="hero__aside">
         <div className="portrait">
-          <img src="/img/profile.jpg" alt="Rang Xiao" />
+          <img src="/img/profile.jpg" alt={profile.name} />
           <div className="portrait__meta">
             <p><T en={profile.affiliation} zh={profile.affiliationZh} lang={lang} /></p>
             <h2>{lang === 'zh' ? profile.nameZh : profile.name}</h2>
           </div>
         </div>
         <div className="stat-grid">
-          <Metric value="14+" label="papers" labelZh="论文" lang={lang} />
-          <Metric value="662+" label="Infernux ★" labelZh="Infernux ★" lang={lang} />
+          {heroMetrics.map((m) => (
+            <Metric key={m.label} value={m.value} label={m.label} labelZh={m.labelZh} lang={lang} />
+          ))}
         </div>
       </aside>
     </section>
@@ -247,8 +249,8 @@ function ResearchAndCareer({ lang }) {
         </div>
         <p className="section__lede">
           <T
-            en="Neural rendering and large-scale graphics engineering on one side, VLM problems on the other—the timeline below is where those threads meet school and industry."
-            zh="一边是神经渲染和大规模图形工程，一边是视觉大模型相关题目；下面的时间线就是它们和学业、工作交汇的地方。"
+            en="Write a short intro for this section: your main directions and how school and work fit together."
+            zh="填写本节的引导语：你的主要方向，以及学业与工作的关系。"
             lang={lang}
           />
         </p>
@@ -306,41 +308,43 @@ function ResearchAndCareer({ lang }) {
   );
 }
 
-function InfernuxFeature({ lang }) {
+function HighlightFeature({ lang }) {
   return (
-    <section className="section feature" id="infernux">
+    <section className="section feature" id="highlight">
       <header className="section__head">
         <span className="section__id">02</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Highlight project" zh="代表项目" lang={lang} /></p>
-          <h2 className="section__title">{infernux.name}</h2>
+          <h2 className="section__title"><T en={highlight.name} zh={highlight.nameZh} lang={lang} /></h2>
         </div>
-        <p className="section__lede"><T en={infernux.headline} zh={infernux.headlineZh} lang={lang} /></p>
+        <p className="section__lede"><T en={highlight.headline} zh={highlight.headlineZh} lang={lang} /></p>
       </header>
 
       <div className="feature__split">
-        <div className="media media--infernux-video">
+        <div className="media media--feature-video">
           <iframe
-            src={infernux.demoVideo}
-            title="Infernux demo"
+            src={highlight.demoVideo}
+            title="Project demo"
             loading="lazy"
             allowFullScreen
           />
         </div>
         <div className="feature__copy">
-          <p><T en={infernux.summary} zh={infernux.summaryZh} lang={lang} /></p>
-          <p><T en={infernux.proposition} zh={infernux.propositionZh} lang={lang} /></p>
+          <p><T en={highlight.summary} zh={highlight.summaryZh} lang={lang} /></p>
+          <p><T en={highlight.proposition} zh={highlight.propositionZh} lang={lang} /></p>
           <div className="link-row">
-            <a className="btn btn--primary" href={infernux.url} target="_blank" rel="noreferrer">GitHub</a>
-            <a className="btn btn--quiet" href={infernux.website} target="_blank" rel="noreferrer">Site</a>
-            <a className="btn btn--quiet" href={infernux.docs} target="_blank" rel="noreferrer">Docs</a>
-            <a className="btn btn--quiet" href={infernux.report} target="_blank" rel="noreferrer">arXiv</a>
+            <a className="btn btn--primary" href={highlight.url} target="_blank" rel="noreferrer">
+              <T en="Link one" zh="链接一" lang={lang} />
+            </a>
+            <a className="btn btn--quiet" href={highlight.website} target="_blank" rel="noreferrer">
+              <T en="Link two" zh="链接二" lang={lang} />
+            </a>
           </div>
         </div>
       </div>
 
       <div className="layer-grid">
-        {infernux.layers.map((layer) => (
+        {highlight.layers.map((layer) => (
           <article className="layer" key={layer.title}>
             <h3><T en={layer.title} zh={layer.titleZh} lang={lang} /></h3>
             <p><Html value={lang === 'zh' ? (layer.bodyZh || layer.body) : layer.body} /></p>
@@ -351,10 +355,10 @@ function InfernuxFeature({ lang }) {
       <div className="capability">
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Implementation" zh="实现范围" lang={lang} /></p>
-          <h3><T en="Current technical scope (preview)." zh="当前技术范围（预览）。" lang={lang} /></h3>
+          <h3><T en="Describe the technical scope here." zh="在此填写技术范围说明。" lang={lang} /></h3>
         </div>
         <ul>
-          {(lang === 'zh' ? infernux.capabilitiesZh : infernux.capabilities).map((cap) => <li key={cap}>{cap}</li>)}
+          {(lang === 'zh' ? highlight.capabilitiesZh : highlight.capabilities).map((cap) => <li key={cap}>{cap}</li>)}
         </ul>
       </div>
     </section>
@@ -365,15 +369,15 @@ function PublicationEvidence({ lang }) {
   return (
     <section className="section">
       <header className="section__head">
-        <span className="section__id">03</span>
+        <span className="section__id">06</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Papers" zh="论文" lang={lang} /></p>
           <h2 className="section__title"><T en="Selected publications" zh="代表论文" lang={lang} /></h2>
         </div>
         <p className="section__lede">
           <T
-            en="Graphics and 3D representation work alongside VLM reasoning, graph-structured prompts, and vision-heavy detection."
-            zh="图形与三维表示相关论文，以及 VLM 推理、图结构提示与视觉密集型检测等工作。"
+            en="Write a short intro for your publications here."
+            zh="在此填写论文部分的引导语。"
             lang={lang}
           />
         </p>
@@ -397,8 +401,8 @@ function ProjectPreview({ lang }) {
         </div>
         <p className="section__lede">
           <T
-            en="Rendering stacks, GPU visualization, and local tooling for graphics and multimodal experiments."
-            zh="渲染技术栈、GPU 可视化，以及服务图形与多模态实验的本地工具。"
+            en="Write a short intro for your projects here."
+            zh="在此填写项目部分的引导语。"
             lang={lang}
           />
         </p>
@@ -415,13 +419,13 @@ function GamePreview({ lang }) {
   return (
     <section className="section">
       <header className="section__head">
-        <span className="section__id">05</span>
+        <span className="section__id">03</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Games" zh="游戏" lang={lang} /></p>
           <h2 className="section__title"><T en="Game work" zh="游戏作品" lang={lang} /></h2>
         </div>
         <p className="section__lede">
-          <T en="Making games is my purest hobby." zh="做游戏是我最纯粹的爱好。" lang={lang} />
+          <T en="Write a short intro for your game work here." zh="在此填写游戏作品部分的引导语。" lang={lang} />
         </p>
       </header>
       <div className="game-grid game-grid--home">
@@ -436,15 +440,15 @@ function Honors({ lang }) {
   return (
     <section className="section">
       <header className="section__head section__head--stack">
-        <span className="section__id">06</span>
+        <span className="section__id">05</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Awards" zh="荣誉" lang={lang} /></p>
           <h2 className="section__title"><T en="Honors" zh="奖项" lang={lang} /></h2>
         </div>
         <p className="section__lede section__lede--narrow">
           <T
-            en="Competition highlights with a one-line “what is this?” so friends outside the field can skim."
-            zh="挑了一些比赛成绩，每条附一句白话说明，方便非同行快速扫一眼。"
+            en="Write a short intro for your awards here."
+            zh="在此填写荣誉部分的引导语。"
             lang={lang}
           />
         </p>
@@ -557,8 +561,8 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '论文档案',
       title: 'Research outputs',
       titleZh: '研究产出',
-      intro: 'Papers, reports, and preprints across graphics, engines, and reasoning.',
-      introZh: '图形、引擎与推理相关的论文、报告与预印本。',
+      intro: 'Write a short intro for the publication archive.',
+      introZh: '在此填写论文归档页的引导语。',
       items: publications,
       render: (item) => <PaperCard key={item.title} paper={item} lang={lang} />
     },
@@ -567,8 +571,8 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '项目档案',
       title: 'Systems & tools',
       titleZh: '系统与工具',
-      intro: 'Graphics stacks, GPU tools, and VLM-facing workbenches with repository links.',
-      introZh: '图形技术栈、GPU 工具与面向 VLM 的工作台，附仓库链接。',
+      intro: 'Write a short intro for the project archive.',
+      introZh: '在此填写项目归档页的引导语。',
       items: projects,
       render: (item) => <ProjectCard key={item.name} project={item} lang={lang} />
     },
@@ -577,8 +581,8 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '游戏',
       title: 'Portfolio',
       titleZh: '作品集',
-      intro: 'Game projects and demos.',
-      introZh: '游戏项目与演示。',
+      intro: 'Write a short intro for the game archive.',
+      introZh: '在此填写游戏归档页的引导语。',
       items: games,
       render: (item) => <GameCard key={item.name} game={item} lang={lang} />
     },
@@ -587,8 +591,8 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '荣誉',
       title: 'Honors',
       titleZh: '奖项',
-      intro: 'Selected competition results.',
-      introZh: '部分竞赛与评选结果。',
+      intro: 'Write a short intro for the award archive.',
+      introZh: '在此填写荣誉归档页的引导语。',
       items: awards,
       render: (item) => (
         <article className="award-card" key={item.title}>
@@ -620,10 +624,14 @@ function Footer({ lang }) {
     <footer className="footer">
       <div>
         <strong>{lang === 'zh' ? profile.nameZh : profile.name}</strong>
-        <p><T en="Game development, Unity, C#, and computer graphics." zh="游戏开发、Unity、C# 与计算机图形学。" lang={lang} /></p>
+        <p><T en="Write one line about yourself or this site." zh="在此填写一句关于你自己或本站的介绍。" lang={lang} /></p>
       </div>
       <div className="footer-links">
-        {profile.links.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}
+        {profile.links.map((link) => (
+          <a key={link.label} href={link.url} target="_blank" rel="noreferrer">
+            <T en={link.label} zh={link.labelZh || link.label} lang={lang} />
+          </a>
+        ))}
       </div>
     </footer>
   );
