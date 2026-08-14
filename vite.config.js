@@ -10,7 +10,7 @@ function copyStaticAssets() {
     name: 'copy-static-assets',
     writeBundle() {
       const outDir = resolve(root, 'dist');
-      for (const dir of ['img', 'attaches']) {
+      for (const dir of ['img', 'attaches', 'media']) {
         const from = resolve(root, dir);
         if (existsSync(from)) {
           cpSync(from, resolve(outDir, dir), { recursive: true, force: true });

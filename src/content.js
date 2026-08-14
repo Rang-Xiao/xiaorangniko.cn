@@ -120,8 +120,58 @@ export const projects = [
 
 export const games = [
   {
-    name: 'Game name',
-    nameZh: '游戏名称',
+    name: 'Cast Syndrome',
+    nameZh: '卡斯特症候群',
+    role: 'Your role',
+    roleZh: '你的角色',
+    desc: 'Write a one-line pitch of the game.',
+    descZh: '用一句话介绍这款游戏。',
+    detail: 'Write the full description: gameplay, what you built, and highlights.',
+    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    video: '/media/castsyndrome.mp4',
+    tags: ['Tag']
+  },
+  {
+    name: 'Unveiled Domain',
+    nameZh: '不可知域',
+    role: 'Your role',
+    roleZh: '你的角色',
+    desc: 'Write a one-line pitch of the game.',
+    descZh: '用一句话介绍这款游戏。',
+    detail: 'Write the full description: gameplay, what you built, and highlights.',
+    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    video: '/media/unveiledomain.mp4',
+    tags: ['Tag']
+  },
+  {
+    name: 'Dusk Rush',
+    nameZh: '暴走黄昏街',
+    role: 'Your role',
+    roleZh: '你的角色',
+    desc: 'Write a one-line pitch of the game.',
+    descZh: '用一句话介绍这款游戏。',
+    detail: 'Write the full description: gameplay, what you built, and highlights.',
+    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    video: '/media/duskrush.mp4',
+    tags: ['Tag']
+  },
+  {
+    name: 'Tale of a Bubble Boy',
+    nameZh: '金鱼之梦',
+    role: 'Your role',
+    roleZh: '你的角色',
+    desc: 'Write a one-line pitch of the game.',
+    descZh: '用一句话介绍这款游戏。',
+    detail: 'Write the full description: gameplay, what you built, and highlights.',
+    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    video:
+      '//player.bilibili.com/player.html?isOutside=true&aid=115559836425554&bvid=BV1AMCdBqEao&cid=34051131770&p=1',
+    bilibili: 'https://www.bilibili.com/video/BV1AMCdBqEao',
+    tags: ['Tag']
+  },
+  {
+    name: 'Kitchen Chaos',
+    nameZh: '大战厨房',
     role: 'Your role',
     roleZh: '你的角色',
     desc: 'Write a one-line pitch of the game.',
@@ -129,26 +179,25 @@ export const games = [
     detail: 'Write the full description: gameplay, what you built, and highlights.',
     detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
     video: DEMO_VIDEO,
-    bilibili: '#',
-    awards: 'Award or recognition (optional)',
-    awardsZh: '奖项或荣誉（可选）',
+    bilibili: 'https://www.bilibili.com/video/BV1xZxzzTE85',
     tags: ['Tag']
   }
 ];
 
 export const awards = [
   {
-    title: 'Tencent Photon Game Competition (college track)',
+    title: 'Tencent LightSpeed Studios Game Competition (college track)',
     titleZh: '光子游戏大赛（高校赛道）',
-    result: 'Gold award (CNY 200k prize)',
-    resultZh: '金奖（20 万元奖金）',
+    result: 'Gold award',
+    resultZh: '金奖',
     blurb:
       'An open game-making competition hosted by Tencent Photon Studios. The 2026 edition ran for seven months and drew over 5,200 entries from studios, universities, and independent creators, with a prize pool of more than CNY 2 million. Taking gold in the college track was a real step forward for our team.',
     blurbZh:
       '光子面向全社会举办的游戏创作大赛。2026 届历时七个月，共有超过 5200 件作品参赛，总奖金池逾 200 万元。能在高校赛道拿到金奖，对我们团队来说是一次不小的成长。',
     link: 'https://mp.weixin.qq.com/s/17hjCvhiTDES9XSQpdGzvw',
     linkLabel: 'Coverage',
-    linkLabelZh: '相关报道'
+    linkLabelZh: '相关报道',
+    image: '/img/awards/tencentlightspeed.jpg'
   },
   {
     title: 'SJTU Student Innovation × NetEase Thunder Fire Game Design Competition',
@@ -158,10 +207,11 @@ export const awards = [
     blurb:
       'Eleven teams presented and playtested their own games at the SJTU Student Innovation Center. It was the first time our team worked together, and a lovely start to it.',
     blurbZh:
-      '11 支队伍在学生创新中心带着各自的自研游戏参加试玩会与答辩评选。这也是我们团队第一次合作，算是一个很好的开始。',
+      '11 支交大队伍在学生创新中心带着各自的自研游戏参与。这也是我们团队第一次合作，算是一个很好的开始。',
     link: 'https://mp.weixin.qq.com/s/7Dsa782x0YqtVRijj-OC4Q',
     linkLabel: 'Coverage',
-    linkLabelZh: '相关报道'
+    linkLabelZh: '相关报道',
+    image: '/img/awards/neteasethunderfire.jpg'
   }
 ];
 

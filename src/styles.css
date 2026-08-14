@@ -642,12 +642,15 @@ button {
   max-height: min(70vh, 520px);
 }
 
-.media--feature-video iframe {
+.media--feature-video iframe,
+.media--feature-video video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  object-fit: contain;
+  background: var(--space-0);
 }
 
 .feature__copy {
@@ -983,10 +986,14 @@ button {
   background: var(--space-0);
 }
 
-.video-frame iframe {
+.video-frame iframe,
+.video-frame video {
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
+  object-fit: contain;
+  background: var(--space-0);
 }
 
 .game-card h3 {
@@ -1142,6 +1149,59 @@ button {
   margin-top: 0.4rem !important;
   font-size: 0.75rem !important;
   font-family: var(--font-mono);
+}
+
+.award-list__item--media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.award-list__body {
+  min-width: 0;
+}
+
+.award-list__media {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--panel);
+}
+
+.award-list__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+a.award-list__media:hover img {
+  transform: scale(1.03);
+  opacity: 0.88;
+}
+
+a.award-list__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+
+a.award-list__media:hover::after {
+  border-color: var(--fog);
+}
+
+@media (max-width: 720px) {
+  .award-list__item--media {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
+  }
 }
 
 /* —— Archive pages —— */

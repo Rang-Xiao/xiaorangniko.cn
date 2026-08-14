@@ -125,6 +125,17 @@ function Html({ value }) {
   return <span dangerouslySetInnerHTML={{ __html: value }} />;
 }
 
+function VideoEmbed({ src, title, poster }) {
+  if (!src) return null;
+  const isFile = /\.(mp4|webm|ogv|ogg|mov|m4v)(\?.*)?$/i.test(src);
+  if (isFile) {
+    return (
+      <video src={src} title={title} poster={poster} controls preload="metadata" playsInline />
+    );
+  }
+  return <iframe src={src} title={title} loading="lazy" allowFullScreen />;
+}
+
 function Shell() {
   const [lang, setLang] = usePreference('lang', detectLang);
   const [theme, setTheme] = useSystemTheme();
@@ -352,12 +363,7 @@ function HighlightFeature({ lang }) {
 
       <div className="feature__split">
         <div className="media media--feature-video">
-          <iframe
-            src={highlight.demoVideo}
-            title="Project demo"
-            loading="lazy"
-            allowFullScreen
-          />
+          <VideoEmbed src={highlight.demoVideo} title="Project demo" poster={highlight.demoPoster} />
         </div>
         <div className="feature__copy">
           <p><T en={highlight.summary} zh={highlight.summaryZh} lang={lang} /></p>
@@ -485,16 +491,35 @@ function Honors({ lang }) {
       </header>
       <div className="award-list award-list--verbose">
         {awards.map((item) => (
-          <article key={item.title}>
-            <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
-            <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
-            <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
-            {item.link && (
-              <p className="award-list__link">
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
+          <article key={item.title} className={item.image ? 'award-list__item award-list__item--media' : 'award-list__item'}>
+            <div className="award-list__body">
+              <h3><T en={item.title} zh={item.titleZh} lang={lang} /></h3>
+              <p className="award-list__result"><T en={item.result} zh={item.resultZh} lang={lang} /></p>
+              <p className="award-list__blurb"><T en={item.blurb} zh={item.blurbZh} lang={lang} /></p>
+              {item.link && !item.image && (
+                <p className="award-list__link">
+                  <a href={item.link} target="_blank" rel="noreferrer">
+                    <T en={item.linkLabel || 'Coverage'} zh={item.linkLabelZh || item.linkLabel || '相关报道'} lang={lang} />
+                  </a>
+                </p>
+              )}
+            </div>
+            {item.image && (
+              item.link ? (
+                <a
+                  className="award-list__media"
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={lang === 'zh' ? item.linkLabelZh || '相关报道' : item.linkLabel || 'Coverage'}
+                >
+                  <img src={item.image} alt={lang === 'zh' ? item.titleZh : item.title} loading="lazy" />
                 </a>
-              </p>
+              ) : (
+                <div className="award-list__media">
+                  <img src={item.image} alt={lang === 'zh' ? item.titleZh : item.title} loading="lazy" />
+                </div>
+              )
             )}
           </article>
         ))}
@@ -558,7 +583,7 @@ function GameCard({ game, lang }) {
   return (
     <article className="game-card">
       <div className="video-frame">
-        <iframe src={game.video} title={game.name} loading="lazy" allowFullScreen />
+        <VideoEmbed src={game.video} title={game.name} poster={game.videoPoster} />
       </div>
       <div>
         <h3><T en={game.name} zh={game.nameZh} lang={lang} /></h3>
