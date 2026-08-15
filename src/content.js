@@ -114,7 +114,7 @@ export const games = [
     nameZh: '卡斯特症候群',
     role: 'Producer / Programmer',
     roleZh: '制作人 / 程序',
-    desc: 'Play as Kaka, a phantom-thief girl who uses a viewfinder to warp through a neon city and pull off impossible capers.',
+    desc: 'Play as Cast, a phantom-thief girl who uses a viewfinder to warp through a neon city and pull off impossible capers.',
     descZh: '扮演怪盗少女小卡，利用取景框穿梭于霓虹都市，展开不可思议的行动。',
     detail:
       'The viewfinder behaves like a portal: enter through one boundary and exit from the opposite side. It also interacts with environmental props, turning teleportation into the basis for traversal and puzzles.<br /><br />I designed and implemented the core teleportation mechanic, level elements, save system, stylized UI and localization systems; designed the onboarding flow; and took ownership of the overall player experience.',
@@ -141,7 +141,7 @@ export const games = [
     ]
   },
   {
-    name: 'Unknowable Domain',
+    name: 'Unveiled Domain',
     nameZh: '不可知域',
     role: 'Lead Designer / Programmer',
     roleZh: '主策 / 程序',
@@ -188,14 +188,14 @@ export const games = [
   {
     name: 'Dream of the Goldfish',
     nameZh: '金鱼之梦',
-    role: '2025 miHoYo Game Design Competition Entry',
-    roleZh: '2025 米哈游策划大赛参赛作品',
-    desc: 'A narrative puzzle game about life and friendship, told through a warm world and hand-drawn illustrations.',
-    descZh: '一款讲述友情与生命的剧情向解谜游戏，以温暖的世界和手绘插画呈现故事。',
+    role: '程序',
+    roleZh: 'Programmer',
+    desc: 'A narrative puzzle game about life and friendship, told through a detailed world scene and hand-drawn illustrations.',
+    descZh: '一款讲述友情与生命的剧情向解谜游戏，以细致场景和手绘插画呈现故事。',
     detail:
-      'Ryan, a boy with SCID, has spent his life inside a sealed sterile capsule. The player becomes Echo, his imaginary friend, and takes him beyond the hospital to meet the world he cannot touch—leaving open whether their journey is fantasy or reality.<br /><br />Bright, healing low-poly scenes and hand-drawn story illustrations soften the tragic premise and foreground companionship, freedom and love. By day, players manipulate objects and moving shadows to keep the capsule out of the light; by night, they use a flashlight to repel spiked insects and protect it.',
+      '2025 miHoYo Game Design Competition Entry: Ryan, a boy with SCID, has spent his life inside a sealed sterile capsule. The player becomes Echo, his imaginary friend, and takes him beyond the hospital to meet the world he cannot touch—leaving open whether their journey is fantasy or reality.<br /><br />Bright, healing low-poly scenes and hand-drawn story illustrations soften the tragic premise and foreground companionship, freedom and love. By day, players manipulate objects and moving shadows to keep the capsule out of the light; by night, they use a flashlight to repel spiked insects and protect it.',
     detailZh:
-      '患有 SCID 的男孩莱恩从小生活在全封闭的无菌胶囊仓中。玩家扮演他因隔离与孤独而产生的臆想朋友埃科，推着胶囊仓离开病房，带他认识这个无法触碰的世界；旅程究竟是幻想还是现实，则留给玩家判断。<br /><br />游戏以明媚治愈的 Low-poly 场景和手绘剧情插画弱化悲剧感，突出陪伴、自由与爱的温暖内核。白天需要与物体和动态光影互动，让胶囊仓避开光线；夜晚则使用手电筒驱散带刺昆虫，保护胶囊仓。',
+      '2025 米哈游策划大赛参赛作品：患有 SCID 的男孩莱恩从小生活在全封闭的无菌胶囊仓中。玩家扮演他因隔离与孤独而产生的臆想朋友埃科，推着胶囊仓离开病房，带他认识这个无法触碰的世界；旅程究竟是幻想还是现实，则留给玩家判断。<br /><br />游戏以明媚治愈的 Low-poly 场景和手绘剧情插画弱化悲剧感，突出陪伴、自由与爱的温暖内核。白天需要与物体和动态光影互动，让胶囊仓避开光线；夜晚则使用手电筒驱散带刺昆虫，保护胶囊仓。',
     video:
       '//player.bilibili.com/player.html?isOutside=true&aid=115559836425554&bvid=BV1AMCdBqEao&cid=34051131770&p=1',
     bilibili: 'https://www.bilibili.com/video/BV1AMCdBqEao',
