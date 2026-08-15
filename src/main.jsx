@@ -283,12 +283,12 @@ function ResearchAndCareer({ lang }) {
         <span className="section__id">01</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Focus & path" zh="方向与路径" lang={lang} /></p>
-          <h2 className="section__title"><T en="Game development & graphics" zh="游戏与图形学" lang={lang} /></h2>
+          <h2 className="section__title"><T en="Games & computing" zh="游戏与计算机技术" lang={lang} /></h2>
         </div>
         <p className="section__lede">
           <T
-            en="Game development on one side, computer graphics on the other — the timeline below is where those two threads meet school and industry."
-            zh="一边是游戏开发，一边是图形学；下面的时间线就是这两条线与学业、工作交汇的地方。"
+            en="Centered on game development, I study the knowledge it calls for and grow through both learning and practice."
+            zh="围绕游戏开发，学习需要用到的知识，学习与实践相长。"
             lang={lang}
           />
         </p>
@@ -353,12 +353,12 @@ function ProjectPreview({ lang }) {
         <span className="section__id">03</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Projects" zh="项目" lang={lang} /></p>
-          <h2 className="section__title"><T en="GAMES101 course assignments" zh="GAMES101 课程作业" lang={lang} /></h2>
+          <h2 className="section__title"><T en="Learning projects" zh="学习项目" lang={lang} /></h2>
         </div>
         <p className="section__lede">
           <T
-            en="Two rendering assignments completed while studying the GAMES101 computer graphics course."
-            zh="学习 GAMES101 计算机图形学课程时完成的两个渲染作业。"
+            en="Projects completed while studying computer graphics."
+            zh="学习图形学做过的项目。"
             lang={lang}
           />
         </p>
@@ -381,7 +381,7 @@ function GamePreview({ lang }) {
           <h2 className="section__title"><T en="Game work" zh="游戏作品" lang={lang} /></h2>
         </div>
         <p className="section__lede">
-          <T en="Write a short intro for your game work here." zh="在此填写游戏作品部分的引导语。" lang={lang} />
+          <T en="Independent and team game projects, from prototypes to playable experiences." zh="从原型探索到可游玩的完整体验，记录独立与团队完成的游戏作品。" lang={lang} />
         </p>
       </header>
       <div className="game-grid game-grid--home">
@@ -403,8 +403,8 @@ function Honors({ lang }) {
         </div>
         <p className="section__lede section__lede--narrow">
           <T
-            en="Write a short intro for your awards here."
-            zh="在此填写荣誉部分的引导语。"
+            en="Competition results and milestones from game development and study."
+            zh="记录游戏开发与学习过程中的竞赛成果和重要节点。"
             lang={lang}
           />
         </p>
@@ -562,18 +562,18 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '论文档案',
       title: 'Research outputs',
       titleZh: '研究产出',
-      intro: 'Write a short intro for the publication archive.',
-      introZh: '在此填写论文归档页的引导语。',
+      intro: 'Research and modeling work that turns technical questions into practical solutions.',
+      introZh: '记录将技术问题转化为实际解决方案的研究与建模工作。',
       items: publications,
       render: (item) => <PaperCard key={item.title} paper={item} lang={lang} />
     },
     projects: {
-      eyebrow: 'GAMES101 coursework',
-      eyebrowZh: 'GAMES101 课程作业',
-      title: 'Rendering assignments',
-      titleZh: '渲染作业',
-      intro: 'Two rendering assignments completed while studying the GAMES101 computer graphics course.',
-      introZh: '学习 GAMES101 计算机图形学课程时完成的两个渲染作业。',
+      eyebrow: 'Projects',
+      eyebrowZh: '项目',
+      title: 'Learning projects',
+      titleZh: '学习项目',
+      intro: 'Projects completed while studying computer graphics.',
+      introZh: '学习图形学做过的项目。',
       items: projects,
       render: (item) => <ProjectCard key={item.name} project={item} lang={lang} />
     },
@@ -582,8 +582,8 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '游戏',
       title: 'Portfolio',
       titleZh: '作品集',
-      intro: 'Write a short intro for the game archive.',
-      introZh: '在此填写游戏归档页的引导语。',
+      intro: 'Independent and team game projects, from prototypes to playable experiences.',
+      introZh: '收录独立与团队完成的游戏作品，从原型探索到可游玩的完整体验。',
       items: games,
       render: (item) => <GameCard key={item.name} game={item} lang={lang} />
     },
@@ -592,8 +592,8 @@ function ArchivePage({ page, lang }) {
       eyebrowZh: '荣誉',
       title: 'Honors',
       titleZh: '奖项',
-      intro: 'Write a short intro for the award archive.',
-      introZh: '在此填写荣誉归档页的引导语。',
+      intro: 'Competition results and milestones from game development and study.',
+      introZh: '记录游戏开发与学习过程中的竞赛成果和重要节点。',
       items: awards,
       render: (item) => <AwardItem key={item.title} item={item} lang={lang} className="award-card" />
     }
