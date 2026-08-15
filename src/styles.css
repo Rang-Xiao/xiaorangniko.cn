@@ -1186,6 +1186,7 @@ button {
   grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
   gap: 1.2rem;
   align-items: start;
+  scroll-margin-top: 6rem;
 }
 
 .award-list__body {

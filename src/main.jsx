@@ -157,6 +157,12 @@ function Shell() {
     document.title = DOC_TITLES[page] || DOC_TITLES.home;
   }, [page]);
 
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: 'start' }));
+  }, [page]);
+
   const toggleLang = () => setLang(lang === 'en' ? 'zh' : 'en');
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
@@ -259,7 +265,7 @@ function Hero({ lang }) {
         </div>
         <div className="stat-grid">
           {heroMetrics.map((m) => (
-            <Metric key={m.label} value={m.value} label={m.label} labelZh={m.labelZh} lang={lang} />
+            <Metric key={m.label} value={m.value} valueZh={m.valueZh} label={m.label} labelZh={m.labelZh} lang={lang} />
           ))}
         </div>
       </aside>
@@ -267,10 +273,10 @@ function Hero({ lang }) {
   );
 }
 
-function Metric({ value, label, labelZh, lang }) {
+function Metric({ value, valueZh, label, labelZh, lang }) {
   return (
     <div className="stat">
-      <strong>{value}</strong>
+      <strong>{lang === 'zh' ? valueZh || value : value}</strong>
       <span><T en={label} zh={labelZh} lang={lang} /></span>
     </div>
   );
@@ -421,7 +427,7 @@ function AwardItem({ item, lang, className = 'award-list__item' }) {
     <img src={item.image} alt={lang === 'zh' ? item.titleZh : item.title} loading="lazy" />
   );
   return (
-    <article className={item.image ? `${className} award-list__item--media` : className}>
+    <article id={item.id} className={item.image ? `${className} award-list__item--media` : className}>
       <div className="award-list__body">
         {(item.date || item.dateZh) && (
           <p className="award-list__date"><T en={item.date} zh={item.dateZh} lang={lang} /></p>
@@ -536,21 +542,36 @@ function GameCard({ game, lang }) {
         {(game.awards || game.awardsZh) && (
           <small><T en={game.awards} zh={game.awardsZh} lang={lang} /></small>
         )}
+        {game.awardLinks?.length > 0 && (
+          <p className="game-card__links">
+            <T en="Awards: " zh="获奖：" lang={lang} />
+            {game.awardLinks.map((award, index) => (
+              <React.Fragment key={award.href}>
+                {index > 0 && ' · '}
+                <InternalLink href={award.href}><T en={award.label} zh={award.labelZh} lang={lang} /></InternalLink>
+              </React.Fragment>
+            ))}
+          </p>
+        )}
         {game.bilibili && (
           <p className="game-card__links">
             <a href={game.bilibili} target="_blank" rel="noreferrer">Bilibili</a>
           </p>
         )}
-        <TagRow tags={game.tags} />
+        <TagRow tags={game.tags} lang={lang} />
       </div>
     </article>
   );
 }
 
-function TagRow({ tags }) {
+function TagRow({ tags, lang }) {
   return (
     <div className="tag-row">
-      {tags.map((tag) => <span key={tag}>{tag}</span>)}
+      {tags.map((tag) => {
+        const en = typeof tag === 'string' ? tag : tag.en;
+        const zh = typeof tag === 'string' ? tag : tag.zh;
+        return <span key={en}><T en={en} zh={zh} lang={lang} /></span>;
+      })}
     </div>
   );
 }

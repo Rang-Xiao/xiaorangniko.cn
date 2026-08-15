@@ -20,14 +20,14 @@ export const profile = {
   emails: ['grinner0215@gmail.com', 'grinner1729@sjtu.edu.cn'],
   links: [
     { label: 'GitHub', labelZh: 'GitHub', url: 'https://github.com/Rang-Xiao' },
-    { label: 'Blog', labelZh: '技术博客', url: 'https://xiaorangblog.cn' },
-    { label: 'Resume', labelZh: '简历', url: '/attaches/XiaoRangResume.pdf' }
+    { label: 'BLOG', labelZh: 'BLOG', url: 'https://xiaorangblog.cn' },
+    { label: 'RESUME', labelZh: 'RESUME', url: '/attaches/XiaoRangResume.pdf' }
   ]
 };
 
 export const heroMetrics = [
-  { value: '20k+', label: 'game downloads', labelZh: '游戏下载量' },
-  { value: '300k+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
+  { value: '10+', valueZh: '10+', label: 'games developed', labelZh: '开发游戏数量' },
+  { value: '300k+', valueZh: '30w+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
 ];
 
 export const researchDirections = [
@@ -111,86 +111,142 @@ export const games = [
   {
     name: 'Cast Syndrome',
     nameZh: '卡斯特症候群',
-    role: 'Your role',
-    roleZh: '你的角色',
-    desc: 'Write a one-line pitch of the game.',
-    descZh: '用一句话介绍这款游戏。',
-    detail: 'Write the full description: gameplay, what you built, and highlights.',
-    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    role: 'Producer / Programmer',
+    roleZh: '制作人 / 程序',
+    desc: 'Play as Kaka, a phantom-thief girl who uses a viewfinder to warp through a neon city and pull off impossible capers.',
+    descZh: '扮演怪盗少女小卡，利用取景框穿梭于霓虹都市，展开不可思议的行动。',
+    detail:
+      'The viewfinder behaves like a portal: enter through one boundary and exit from the opposite side. It also interacts with environmental props, turning teleportation into the basis for traversal and puzzles.<br /><br />I designed and implemented the core teleportation mechanic, level elements, save system, stylized UI and localization systems; designed the onboarding flow; and took ownership of the overall player experience.',
+    detailZh:
+      '取景框像传送门一样工作：角色可从边界一侧穿入、从对侧穿出。它不仅能够传送角色，还能与场景中的多种道具交互，以此完成移动、解谜与闯关。<br /><br />我设计并实现了核心传送机制、关卡元素、存档系统、风格化 UI 系统和本地化系统，设计新手引导流程，并负责整体玩家体验的把关。',
     video: '/media/castsyndrome.mp4',
-    tags: ['Tag']
+    awardLinks: [
+      {
+        label: 'Gold Award — Tencent LightSpeed Studios Game Competition',
+        labelZh: '光子游戏大赛高校赛道金奖',
+        href: '/awards.html#tencent-lightspeed'
+      },
+      {
+        label: 'First Prize & Best Innovation Award — NetEase Thunder Fire Collegiate Game Design Competition',
+        labelZh: '网易雷火高校游戏设计大赛一等奖及最佳创新奖',
+        href: '/awards.html#netease-thunder-fire'
+      }
+    ],
+    tags: [
+      { en: 'Unity', zh: 'Unity' },
+      { en: 'Platformer', zh: '平台跳跃' },
+      { en: 'Puzzle', zh: '解谜' },
+      { en: '2D', zh: '2D' }
+    ]
   },
   {
     name: 'Unveiled Domain',
     nameZh: '不可知域',
-    role: 'Your role',
-    roleZh: '你的角色',
-    desc: 'Write a one-line pitch of the game.',
-    descZh: '用一句话介绍这款游戏。',
-    detail: 'Write the full description: gameplay, what you built, and highlights.',
-    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    role: 'Lead Designer / Programmer',
+    roleZh: '主策 / 程序',
+    desc: 'A platformer where platforms disappear when they are obscured.',
+    descZh: '平台跳跃游戏，但是平台被挡住就会消失。',
+    detail:
+      'Players search for the best viewing angle by reading the spatial relationship between the character, camera and level elements. Repositioning changes foreground occlusion: hidden platforms disappear, turning apparent barriers into new routes.<br /><br />Working from the game jam theme “Hide,” I proposed the core mechanic and implemented every game system.',
+    detailZh:
+      '玩家通过观察角色、摄像机与场景元素的位置关系，寻找最佳观察角度。调整自身位置可以改变前景与关卡元素的遮挡关系，让被遮住的平台消失，将原本无法通过的障碍转化为新的路径。<br /><br />结合 Game Jam 主题“藏”，我提出了核心玩法构想，并负责全部功能的实现。',
     video: '/media/unveiledomain.mp4',
-    tags: ['Tag']
+    awardLinks: [
+      {
+        label: '3rd Place in the NetEase MINI-GAME On-site Vote',
+        labelZh: '网易 MINI-GAME 线下投票全场第三',
+        href: '/awards.html#netease-mini-game'
+      }
+    ],
+    tags: [
+      { en: 'Unity', zh: 'Unity' },
+      { en: 'Platformer', zh: '平台跳跃' },
+      { en: 'Puzzle', zh: '解谜' },
+      { en: '2D', zh: '2D' }
+    ]
   },
   {
     name: 'Dusk Rush',
     nameZh: '暴走黄昏街',
-    role: 'Your role',
-    roleZh: '你的角色',
-    desc: 'Write a one-line pitch of the game.',
-    descZh: '用一句话介绍这款游戏。',
-    detail: 'Write the full description: gameplay, what you built, and highlights.',
-    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    role: 'Lead Programmer',
+    roleZh: '主程',
+    desc: 'A punchy deckbuilding roguelite mobile game—and a certified time thief.',
+    descZh: '爽感十足的卡牌肉鸽割草手游，时间剥夺者。',
+    detail:
+      'Showcased and pitched on site at ChinaJoy 2026. Players trigger card battles, gather resources and encounter special events while exploring, building each run through cards, gems and attribute growth.<br /><br />I built the procedural map generator around room topology and gameplay variants, with seeded generation, layout constraints, layered resource placement and retry safeguards to ensure connectivity and complete objectives. I also created an extensible exploration-object base class and factory workflow for configuration-driven content.<br /><br />As lead programmer, I designed the character and progression data model for base stats, starting decks, experience curves, energy and ultimate abilities; coordinated runtime state across exploration and combat; and separated the client-code and configuration-resource repositories to reduce cross-team branch conflicts.',
+    detailZh:
+      '项目于 2026 ChinaJoy 展出并完成现场路演。玩家在探索中触发卡牌战斗、拾取资源与特殊事件，并通过卡牌、宝石和属性成长构建局内流派。<br /><br />我基于房间拓扑与玩法变体配置实现随机地图生成，支持随机种子、布局约束、资源分层投放及失败重试，保障地图可连通与玩法目标完整；同时构建探索对象基类及工厂生成机制，以统一接口支持配置化内容扩展。<br /><br />作为主程，我设计了角色与局内外成长数据结构，统一协调探索和战斗系统中的生命、金币、经验、卡组、宝石及属性状态；并将客户端代码仓库与配置资源仓库解耦，降低团队协作中的分支干扰。',
     video: '/media/duskrush.mp4',
-    tags: ['Tag']
+    tags: [
+      { en: 'Tuanjie Engine', zh: '团结引擎' },
+      { en: 'Card Game', zh: '卡牌' },
+      { en: 'Roguelite', zh: '肉鸽' },
+      { en: 'Mobile', zh: '手游' }
+    ]
   },
   {
     name: 'Tale of a Bubble Boy',
     nameZh: '金鱼之梦',
-    role: 'Your role',
-    roleZh: '你的角色',
-    desc: 'Write a one-line pitch of the game.',
-    descZh: '用一句话介绍这款游戏。',
-    detail: 'Write the full description: gameplay, what you built, and highlights.',
-    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    role: '2025 miHoYo Game Design Competition Entry',
+    roleZh: '2025 米哈游策划大赛参赛作品',
+    desc: 'A narrative puzzle game about life and friendship, told through a warm world and hand-drawn illustrations.',
+    descZh: '一款讲述友情与生命的剧情向解谜游戏，以温暖的世界和手绘插画呈现故事。',
+    detail:
+      'Ryan, a boy with SCID, has spent his life inside a sealed sterile capsule. The player becomes Echo, his imaginary friend, and takes him beyond the hospital to meet the world he cannot touch—leaving open whether their journey is fantasy or reality.<br /><br />Bright, healing low-poly scenes and hand-drawn story illustrations soften the tragic premise and foreground companionship, freedom and love. By day, players manipulate objects and moving shadows to keep the capsule out of the light; by night, they use a flashlight to repel spiked insects and protect it.',
+    detailZh:
+      '患有 SCID 的男孩莱恩从小生活在全封闭的无菌胶囊仓中。玩家扮演他因隔离与孤独而产生的臆想朋友埃科，推着胶囊仓离开病房，带他认识这个无法触碰的世界；旅程究竟是幻想还是现实，则留给玩家判断。<br /><br />游戏以明媚治愈的 Low-poly 场景和手绘剧情插画弱化悲剧感，突出陪伴、自由与爱的温暖内核。白天需要与物体和动态光影互动，让胶囊仓避开光线；夜晚则使用手电筒驱散带刺昆虫，保护胶囊仓。',
     video:
       '//player.bilibili.com/player.html?isOutside=true&aid=115559836425554&bvid=BV1AMCdBqEao&cid=34051131770&p=1',
     bilibili: 'https://www.bilibili.com/video/BV1AMCdBqEao',
-    tags: ['Tag']
+    tags: [
+      { en: 'Unity', zh: 'Unity' },
+      { en: 'Narrative', zh: '剧情向' },
+      { en: 'Heartwarming', zh: '治愈' },
+      { en: '3D', zh: '3D' }
+    ]
   },
   {
     name: 'Kitchen Chaos',
-    nameZh: '大战厨房',
-    role: 'Your role',
-    roleZh: '你的角色',
-    desc: 'Write a one-line pitch of the game.',
-    descZh: '用一句话介绍这款游戏。',
-    detail: 'Write the full description: gameplay, what you built, and highlights.',
-    detailZh: '填写完整介绍：玩法、你负责的部分，以及亮点。',
+    nameZh: '厨房',
+    role: 'Solo Unity Learning Project',
+    roleZh: 'Unity 个人学习项目',
+    desc: 'Overcooked, but the two players can fight each other.',
+    descZh: '胡闹厨房，但是两个人可以互殴。',
+    detail:
+      'Built while I was learning Unity, this project uses Netcode to support online multiplayer and extends the familiar co-op cooking rules into a head-to-head mode. Every served dish belongs to the player who delivers it, and the player with the most dishes wins—adding direct competition and more replayability.',
+    detailZh:
+      '这是我初学 Unity 时完成的项目，基于 Netcode 框架实现联机功能，并在现有合作烹饪规则上扩展出双人对战：谁上了菜，菜就属于谁，最终比较双方完成的菜品数量，显著提升了可玩性和对抗性。',
     video: DEMO_VIDEO,
     bilibili: 'https://www.bilibili.com/video/BV1xZxzzTE85',
-    tags: ['Tag']
+    tags: [
+      { en: 'Unity', zh: 'Unity' },
+      { en: 'Online Multiplayer', zh: '多人联机' },
+      { en: 'Party', zh: '派对' },
+      { en: 'Management Sim', zh: '模拟经营' }
+    ]
   }
 ];
 
 export const awards = [
   {
+    id: 'netease-mini-game',
     title: 'NetEase Games Campus MINI-GAME Challenge',
     titleZh: '网易游戏高校 MINI-GAME 挑战赛',
     date: 'Jul 2026',
     dateZh: '2026.07',
-    result: 'Finalist',
-    resultZh: '入围决赛',
+    result: '3rd place in the on-site vote',
+    resultZh: '线下投票第三名',
     blurb:
       'Over 500 teams from universities across China entered, and 32 made the finals. The 48-hour game jam tested our team’s creativity and execution under intense time pressure; our original entry, Unveiled Domain, placed third in the on-site vote.',
     blurbZh:
-      '500 余支来自中国高校的队伍参与，32 支进入决赛。决赛采用 48h Game Jam 形式，考研了我们团队短时间高强度下的创造力和执行力。我们的原创作品《不可知域》获得线下投票第三的好成绩。',
+      '500 余支来自中国高校的队伍参与，32 支进入决赛。决赛采用 48h Game Jam 形式，考验了我们团队短时间高强度下的创造力和执行力。我们的原创作品《不可知域》获得线下投票第三的好成绩。',
     link: 'https://mp.weixin.qq.com/s/pkc3OEa6kh4l0k7KmvEmSg',
     linkLabel: 'Coverage',
     linkLabelZh: '相关报道',
     image: '/img/awards/neteaseminigame.JPG'
   },
   {
+    id: 'tencent-lightspeed',
     title: 'Tencent LightSpeed Studios Game Competition (college track)',
     titleZh: '光子游戏大赛（高校赛道）',
     date: 'Jul 2026',
@@ -207,12 +263,13 @@ export const awards = [
     image: '/img/awards/tencentlightspeed.jpg'
   },
   {
+    id: 'netease-thunder-fire',
     title: 'SJTU Student Innovation × NetEase Thunder Fire Game Design Competition',
     titleZh: '交大学创 × 网易雷火高校游戏设计大赛',
     date: 'Dec 2025',
     dateZh: '2025.12',
-    result: 'First prize & Best Creativity award',
-    resultZh: '一等奖及最佳创意奖',
+    result: 'First prize & Best Innovation award',
+    resultZh: '一等奖及最佳创新奖',
     blurb:
       'Co-hosted by the SJTU Student Innovation Center and NetEase Thunder Fire, the competition brought together 20 SJTU teams. It was our team’s first collaboration and a lovely start to it.',
     blurbZh:
