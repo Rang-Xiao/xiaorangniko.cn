@@ -6,7 +6,6 @@ import {
   education,
   games,
   heroMetrics,
-  highlight,
   profile,
   projects,
   publications,
@@ -218,7 +217,6 @@ function Home({ lang }) {
       <Hero lang={lang} />
       <ResearchAndCareer lang={lang} />
       <GamePreview lang={lang} />
-      <HighlightFeature lang={lang} />
       <ProjectPreview lang={lang} />
       <Honors lang={lang} />
       <Footer lang={lang} />
@@ -244,7 +242,7 @@ function Hero({ lang }) {
           {interests.map((item) => <span key={item}>{item}</span>)}
         </div>
         <div className="hero__actions">
-          <a className="btn btn--primary" href="#highlight"><T en="Highlight" zh="代表项目" lang={lang} /></a>
+          <InternalLink className="btn btn--primary" href="/projects.html"><T en="Projects" zh="项目" lang={lang} /></InternalLink>
           <InternalLink className="btn btn--quiet" href="/games.html"><T en="Game work" zh="游戏作品" lang={lang} /></InternalLink>
         </div>
         <div className="hero__contacts">
@@ -348,71 +346,19 @@ function ResearchAndCareer({ lang }) {
   );
 }
 
-function HighlightFeature({ lang }) {
-  return (
-    <section className="section feature" id="highlight">
-      <header className="section__head">
-        <span className="section__id">03</span>
-        <div>
-          <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Highlight project" zh="代表项目" lang={lang} /></p>
-          <h2 className="section__title"><T en={highlight.name} zh={highlight.nameZh} lang={lang} /></h2>
-        </div>
-        <p className="section__lede"><T en={highlight.headline} zh={highlight.headlineZh} lang={lang} /></p>
-      </header>
-
-      <div className="feature__split">
-        <div className="media media--feature-video">
-          <VideoEmbed src={highlight.demoVideo} title="Project demo" poster={highlight.demoPoster} />
-        </div>
-        <div className="feature__copy">
-          <p><T en={highlight.summary} zh={highlight.summaryZh} lang={lang} /></p>
-          <p><T en={highlight.proposition} zh={highlight.propositionZh} lang={lang} /></p>
-          <div className="link-row">
-            <a className="btn btn--primary" href={highlight.url} target="_blank" rel="noreferrer">
-              <T en="Link one" zh="链接一" lang={lang} />
-            </a>
-            <a className="btn btn--quiet" href={highlight.website} target="_blank" rel="noreferrer">
-              <T en="Link two" zh="链接二" lang={lang} />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="layer-grid">
-        {highlight.layers.map((layer) => (
-          <article className="layer" key={layer.title}>
-            <h3><T en={layer.title} zh={layer.titleZh} lang={lang} /></h3>
-            <p><Html value={lang === 'zh' ? (layer.bodyZh || layer.body) : layer.body} /></p>
-          </article>
-        ))}
-      </div>
-
-      <div className="capability">
-        <div>
-          <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Implementation" zh="实现范围" lang={lang} /></p>
-          <h3><T en="Describe the technical scope here." zh="在此填写技术范围说明。" lang={lang} /></h3>
-        </div>
-        <ul>
-          {(lang === 'zh' ? highlight.capabilitiesZh : highlight.capabilities).map((cap) => <li key={cap}>{cap}</li>)}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
 function ProjectPreview({ lang }) {
   return (
     <section className="section">
       <header className="section__head">
-        <span className="section__id">04</span>
+        <span className="section__id">03</span>
         <div>
           <p className="eyebrow" style={{ margin: '0 0 0.5rem' }}><T en="Projects" zh="项目" lang={lang} /></p>
-          <h2 className="section__title"><T en="Software" zh="软件项目" lang={lang} /></h2>
+          <h2 className="section__title"><T en="GAMES101 course assignments" zh="GAMES101 课程作业" lang={lang} /></h2>
         </div>
         <p className="section__lede">
           <T
-            en="Write a short intro for your projects here."
-            zh="在此填写项目部分的引导语。"
+            en="Two rendering assignments completed while studying the GAMES101 computer graphics course."
+            zh="学习 GAMES101 计算机图形学课程时完成的两个渲染作业。"
             lang={lang}
           />
         </p>
@@ -611,12 +557,12 @@ function ArchivePage({ page, lang }) {
       render: (item) => <PaperCard key={item.title} paper={item} lang={lang} />
     },
     projects: {
-      eyebrow: 'Project archive',
-      eyebrowZh: '项目档案',
-      title: 'Systems & tools',
-      titleZh: '系统与工具',
-      intro: 'Write a short intro for the project archive.',
-      introZh: '在此填写项目归档页的引导语。',
+      eyebrow: 'GAMES101 coursework',
+      eyebrowZh: 'GAMES101 课程作业',
+      title: 'Rendering assignments',
+      titleZh: '渲染作业',
+      intro: 'Two rendering assignments completed while studying the GAMES101 computer graphics course.',
+      introZh: '学习 GAMES101 计算机图形学课程时完成的两个渲染作业。',
       items: projects,
       render: (item) => <ProjectCard key={item.name} project={item} lang={lang} />
     },

@@ -30,33 +30,6 @@ export const heroMetrics = [
   { value: '30w+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
 ];
 
-export const highlight = {
-  name: 'Highlight project name',
-  nameZh: '代表项目名称',
-  url: '#',
-  docs: '#',
-  website: '#',
-  report: '#',
-  demoVideo: DEMO_VIDEO,
-  image: '/img/projects/infengine.png',
-  headline: 'Write one line that explains why this project matters.',
-  headlineZh: '用一句话说明这个项目的意义。',
-  summary: 'Write a paragraph describing what this project is and what it does.',
-  summaryZh: '用一段话描述这个项目是什么、能做什么。',
-  proposition: 'Write a paragraph about the technical approach or the problem it solves.',
-  propositionZh: '用一段话描述技术方案或它解决的问题。',
-  layers: [
-    {
-      title: 'Module title',
-      titleZh: '模块标题',
-      body: 'Describe this module: what it contains and why it exists.',
-      bodyZh: '描述该模块：包含什么、为什么需要它。'
-    }
-  ],
-  capabilities: ['Capability item'],
-  capabilitiesZh: ['能力条目']
-};
-
 export const researchDirections = [
   {
     title: 'Game development',
@@ -102,18 +75,33 @@ export const publications = [
 
 export const projects = [
   {
-    name: 'Project name',
-    url: '#',
-    status: 'Status',
-    statusZh: '状态',
-    image: '/img/projects/vultorch.png',
-    desc: 'Write a one-line summary of the project.',
-    descZh: '用一句话概括该项目。',
-    detail: 'Write the full description: goals, tech stack, and what you built.',
-    detailZh: '填写完整介绍：目标、技术栈，以及你完成的部分。',
-    role: 'Your role in this project',
-    roleZh: '你在该项目中的角色',
-    tags: ['Tag'],
+    name: 'Blinn-Phong Shading Model',
+    url: 'https://github.com/Rang-Xiao/GAMES101-Solution-Niko',
+    status: 'GAMES101 Assignment 3',
+    statusZh: 'GAMES101 作业 3',
+    image: '/img/projects/blingphong.png',
+    desc: 'A software-rasterizer shader implementing ambient, diffuse, and specular Blinn-Phong lighting.',
+    descZh: '在软光栅器中实现环境光、漫反射与高光项的 Blinn-Phong 着色模型。',
+    detail: 'Built while studying GAMES101. The assignment also implements normal and texture shaders, bilinear texture sampling, and bump/displacement mapping.',
+    detailZh: '学习 GAMES101 课程完成的作业；还实现了法线与纹理着色器、双线性纹理采样，以及凹凸/位移贴图。',
+    role: 'Individual coursework implementation',
+    roleZh: '个人课程作业实现',
+    tags: ['C++', 'Eigen', 'Software Rasterization', 'Blinn-Phong'],
+    featured: true
+  },
+  {
+    name: 'Path Tracing Renderer',
+    url: 'https://github.com/Rang-Xiao/GAMES101-Solution-Niko',
+    status: 'GAMES101 Assignment 7',
+    statusZh: 'GAMES101 作业 7',
+    image: '/img/projects/pathTracing.png',
+    desc: 'A Monte Carlo path tracer for global illumination, rendered with progressive multi-sample accumulation.',
+    descZh: '使用蒙特卡洛路径追踪与渐进多重采样累积实现全局光照渲染。',
+    detail: 'Built while studying GAMES101. It extends the earlier ray tracer and BVH acceleration work with indirect illumination, Russian roulette termination, and area-light sampling.',
+    detailZh: '学习 GAMES101 课程完成的作业；在此前的光线追踪与 BVH 加速基础上，加入间接光照、俄罗斯轮盘赌终止与区域光采样。',
+    role: 'Individual coursework implementation',
+    roleZh: '个人课程作业实现',
+    tags: ['C++', 'Monte Carlo', 'Path Tracing', 'BVH'],
     featured: true
   }
 ];
