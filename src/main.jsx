@@ -71,11 +71,11 @@ function InternalLink({ href, children, className, ...rest }) {
 }
 
 const DOC_TITLES = {
-  home: 'Your Name | Portfolio',
-  papers: 'Papers | Your Name',
-  projects: 'Projects | Your Name',
-  games: 'Games | Your Name',
-  awards: 'Awards | Your Name'
+  home: 'Rang Xiao',
+  papers: 'Papers | Rang Xiao',
+  projects: 'Projects | Rang Xiao',
+  games: 'Games | Rang Xiao',
+  awards: 'Awards | Rang Xiao'
 };
 
 function detectLang() {
@@ -242,8 +242,8 @@ function Hero({ lang }) {
           {interests.map((item) => <span key={item}>{item}</span>)}
         </div>
         <div className="hero__actions">
-          <InternalLink className="btn btn--primary" href="/projects.html"><T en="Projects" zh="项目" lang={lang} /></InternalLink>
-          <InternalLink className="btn btn--quiet" href="/games.html"><T en="Game work" zh="游戏作品" lang={lang} /></InternalLink>
+          <InternalLink className="btn btn--primary" href="/games.html"><T en="Game work" zh="游戏作品" lang={lang} /></InternalLink>
+          <InternalLink className="btn btn--quiet" href="/projects.html"><T en="Projects" zh="项目" lang={lang} /></InternalLink>
         </div>
         <div className="hero__contacts">
           {profile.emails.map((email) => <span key={email}>{email}</span>)}
@@ -459,7 +459,7 @@ function AwardItem({ item, lang, className = 'award-list__item' }) {
 function PaperCard({ paper, lang }) {
   const body = (
     <>
-      <span className={`badge ${paper.level === 'ccf-a' ? 'badge--ccf-a' : ''} ${paper.level === 'journal' ? 'badge--journal' : ''}`}>{paper.levelLabel}</span>
+      <span className={`badge ${paper.level === 'ccf-a' ? 'badge--ccf-a' : ''} ${paper.level === 'journal' ? 'badge--journal' : ''}`}><T en={paper.levelLabel} zh={paper.levelLabelZh || paper.levelLabel} lang={lang} /></span>
       <h3>{paper.title}</h3>
       <p><Html value={paper.authors} /></p>
       {(paper.intro || paper.introZh) && (
@@ -470,8 +470,19 @@ function PaperCard({ paper, lang }) {
   );
 
   return (
-    <article className="paper-card">
-      {paper.link ? <a href={paper.link} target="_blank" rel="noreferrer">{body}</a> : body}
+    <article className={`paper-card${paper.image ? ' paper-card--with-image' : ''}`}>
+      {paper.image && (
+        paper.link ? (
+          <a className="paper-card__media" href={paper.link} target="_blank" rel="noreferrer">
+            <img src={paper.image} alt={paper.title} />
+          </a>
+        ) : (
+          <div className="paper-card__media"><img src={paper.image} alt={paper.title} /></div>
+        )
+      )}
+      <div className="paper-card__body">
+        {paper.link ? <a href={paper.link} target="_blank" rel="noreferrer">{body}</a> : body}
+      </div>
     </article>
   );
 }

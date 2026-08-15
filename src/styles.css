@@ -773,6 +773,28 @@ button {
   border-color: var(--line-strong);
 }
 
+.paper-card--with-image {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.paper-card__media {
+  display: block;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--space-2);
+}
+
+.paper-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .paper-card a {
   display: block;
 }
@@ -1363,6 +1385,10 @@ a.award-list__media:hover::after {
   .card-grid,
   .project-grid,
   .archive-list.projects {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card--with-image {
     grid-template-columns: 1fr;
   }
 

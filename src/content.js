@@ -9,12 +9,12 @@ export const profile = {
   titleZh: '永远做一个玩家',
   affiliation: 'Shanghai Jiao Tong University · School of Computer Science',
   affiliationZh: '上海交通大学 · 计算机学院',
-  thesis: 'Welcome. I am a game developer who enjoys digging into technology and building the games I love.',
-  thesisZh: '欢迎来到我的主页。我是一名游戏开发者，喜欢钻研技术，也在做自己热爱的游戏。',
+  thesis: 'Welcome. I am a game developer building the games I love and enjoying the technology behind them.',
+  thesisZh: '欢迎来到我的主页。我是一名游戏开发者，在做自己热爱的游戏，也喜欢钻研技术。',
   about:
-    'CS undergraduate at SJTU (IEEE Pilot Class). I build games with Unity and C#/C++, and have worked on fairly complex core mechanics, editor tools for designers, and a few larger systems, leading small teams along the way. Graphics is a lasting interest, and I keep learning it to push the visuals a little further. Currently interning on the client tools team of Where Winds Meet at NetEase Games, while running a small student game studio with friends.',
+    'CS undergraduate at SJTU (IEEE Pilot Class). I work with Unity and C#/C++ on games, developing core gameplay and designer-facing tools, and have led multi-person game development teams as lead programmer. I am currently interning with the Where Winds Meet client tools team at NetEase Games while running a student game studio.',
   aboutZh:
-    '上海交通大学计算机科学与技术（IEEE 试点班）本科在读。平时用 Unity 与 C#/C++ 做游戏，写过一些较复杂的核心玩法与策划侧工具，也参与过较大系统的开发，带过几人的小团队。对图形学一直有兴趣，希望能把画面做得更好一些。目前在网易互娱《燕云十六声》客户端工具组实习，同时和朋友一起经营一个学生游戏工作室。',
+    '上海交通大学计算机科学与技术（IEEE 试点班）本科在读。善于用 Unity 与 C#/C++ 做游戏，负责核心玩法与策划侧工具的开发，曾作为主程序带过多人的游戏开发团队。目前在网易互娱《燕云十六声》客户端工具组实习，同时经营着一个学生游戏工作室。',
   interests: ['Unity', 'C++', 'C#'],
   interestsZh: ['Unity', 'C++', 'C#'],
   emails: ['grinner0215@gmail.com', 'grinner1729@sjtu.edu.cn'],
@@ -26,8 +26,8 @@ export const profile = {
 };
 
 export const heroMetrics = [
-  { value: '2w+', label: 'game downloads', labelZh: '游戏下载量' },
-  { value: '30w+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
+  { value: '20k+', label: 'game downloads', labelZh: '游戏下载量' },
+  { value: '300k+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
 ];
 
 export const researchDirections = [
@@ -35,17 +35,17 @@ export const researchDirections = [
     title: 'Game development',
     titleZh: '游戏开发',
     body:
-      'Gameplay and client systems built mainly with Unity and C#, plus editor tools that make life easier for designers.',
+      'Client systems built mainly with Unity and C#, plus editor tools that make life easier for designers.',
     bodyZh:
-      '以 Unity 与 C# 为主的玩法与客户端系统开发，也会做一些方便策划的编辑器工具。'
+      '以 Unity 与 C# 为主的客户端系统开发，也会做一些方便策划的编辑器工具。'
   },
   {
     title: 'Computer graphics',
     titleZh: '图形学',
     body:
-      'Learning rendering from the ground up: MVP transforms, software rasterization, Blinn-Phong shading, and ray tracing, while picking up Unity render pipeline knowledge.',
+      'Learning rendering from the ground up: MVP transforms, software rasterization, Blinn-Phong shading, and ray tracing, while learning Unity’s Universal Render Pipeline (URP).',
     bodyZh:
-      '从底层理解渲染：MVP 变换、软光栅、Blinn-Phong 光照与光线追踪，同时在补 Unity 渲染管线的知识。'
+      '从底层理解渲染：MVP 变换、软光栅、Blinn-Phong 光照与光线追踪，同时在学习URP。'
   },
   {
     title: 'Computer networking',
@@ -59,16 +59,17 @@ export const researchDirections = [
 
 export const publications = [
   {
-    title: 'Paper title goes here',
-    authors: '<u>Author One</u>, Author Two, Author Three',
-    venue: 'Venue, Year',
-    venueZh: '发表刊物 / 会议, 年份',
+    title: '基于多层次优化的无人机烟幕投放策略研究',
+    authors: '<u>Rang Xiao</u>',
+    venue: 'Sep 2025',
+    venueZh: '2025.09',
     level: 'journal',
-    levelLabel: 'Label',
-    link: '#',
-    image: '/img/papers/fema.png',
-    intro: 'Write a short summary of the paper: the question, the approach, and the takeaway.',
-    introZh: '用一小段话概括论文：问题、方法与结论。',
+    levelLabel: 'Mathematical modeling',
+    levelLabelZh: '数学建模',
+    link: '/attaches/BombPaper.pdf',
+    image: '/img/papers/bomb.png',
+    intro: 'Based on Problem A of the 2025 China Undergraduate Mathematical Contest in Modeling, this study models an in-game combat scene and optimizes UAV smoke-screen deployment with geometric visibility analysis and particle-swarm optimization.',
+    introZh: '源自 2025 年全国大学生数学建模竞赛 A 题，将对抗情境建模为游戏场景；结合几何可见性判定与粒子群优化，求解无人机烟幕的最优投放策略。',
     featured: true
   }
 ];
@@ -77,8 +78,8 @@ export const projects = [
   {
     name: 'Blinn-Phong Shading Model',
     url: 'https://github.com/Rang-Xiao/GAMES101-Solution-Niko',
-    status: 'GAMES101 Assignment 3',
-    statusZh: 'GAMES101 作业 3',
+    status: 'GAMES101 Assignment',
+    statusZh: 'GAMES101 作业',
     image: '/img/projects/blingphong.png',
     desc: 'A software-rasterizer shader implementing ambient, diffuse, and specular Blinn-Phong lighting.',
     descZh: '在软光栅器中实现环境光、漫反射与高光项的 Blinn-Phong 着色模型。',
@@ -92,8 +93,8 @@ export const projects = [
   {
     name: 'Path Tracing Renderer',
     url: 'https://github.com/Rang-Xiao/GAMES101-Solution-Niko',
-    status: 'GAMES101 Assignment 7',
-    statusZh: 'GAMES101 作业 7',
+    status: 'GAMES101 Assignment',
+    statusZh: 'GAMES101 作业',
     image: '/img/projects/pathTracing.png',
     desc: 'A Monte Carlo path tracer for global illumination, rendered with progressive multi-sample accumulation.',
     descZh: '使用蒙特卡洛路径追踪与渐进多重采样累积实现全局光照渲染。',
@@ -181,9 +182,9 @@ export const awards = [
     result: 'Finalist',
     resultZh: '入围决赛',
     blurb:
-      'Over 500 teams from universities across China entered, and 32 made the finals. The final round was a 48-hour game jam, where our original entry placed third in the on-site vote.',
+      'Over 500 teams from universities across China entered, and 32 made the finals. The 48-hour game jam tested our team’s creativity and execution under intense time pressure; our original entry, Unveiled Domain, placed third in the on-site vote.',
     blurbZh:
-      '500 余支来自中国高校的队伍参与，32 支进入决赛。决赛采用 48h Game Jam 形式，我们的原创作品获得线下投票第三。',
+      '500 余支来自中国高校的队伍参与，32 支进入决赛。决赛采用 48h Game Jam 形式，考研了我们团队短时间高强度下的创造力和执行力。我们的原创作品《不可知域》获得线下投票第三的好成绩。',
     link: 'https://mp.weixin.qq.com/s/pkc3OEa6kh4l0k7KmvEmSg',
     linkLabel: 'Coverage',
     linkLabelZh: '相关报道',
@@ -197,9 +198,9 @@ export const awards = [
     result: 'Gold award',
     resultZh: '金奖',
     blurb:
-      'An open game-making competition hosted by Tencent Photon Studios. The 2026 edition ran for seven months and drew over 5,200 entries from studios, universities, and independent creators, with a prize pool of more than CNY 2 million. Taking gold in the college track was a real step forward for our team.',
+      'An open game-making competition hosted by Tencent Photon Studios. It ran for seven months, drew over 5,200 entries, and offered a prize pool of more than CNY 2 million. Fighting through to win gold in the college track was a meaningful step forward for our team.',
     blurbZh:
-      '光子面向全社会举办的游戏创作大赛。2026 届历时七个月，共有超过 5200 件作品参赛，总奖金池逾 200 万元。能在高校赛道拿到金奖，对我们团队来说是一次不小的成长。',
+      '光子面向全社会举办的游戏创作大赛，历时七个月，共有超过 5200 件作品参赛，总奖金池逾 200 万元。能一路披荆斩棘在高校赛道拿到金奖，对我们团队来说是一次不小的成长。',
     link: 'https://mp.weixin.qq.com/s/17hjCvhiTDES9XSQpdGzvw',
     linkLabel: 'Coverage',
     linkLabelZh: '相关报道',
@@ -213,9 +214,9 @@ export const awards = [
     result: 'First prize & Best Creativity award',
     resultZh: '一等奖及最佳创意奖',
     blurb:
-      'Eleven teams presented and playtested their own games at the SJTU Student Innovation Center. It was the first time our team worked together, and a lovely start to it.',
+      'Co-hosted by the SJTU Student Innovation Center and NetEase Thunder Fire, the competition brought together 20 SJTU teams. It was our team’s first collaboration and a lovely start to it.',
     blurbZh:
-      '11 支交大队伍在学生创新中心带着各自的自研游戏参与。这也是我们团队第一次合作，算是一个很好的开始。',
+      '由上海交通大学学生创新中心联合网易雷火举办，共有20支交大队伍参与。这是我们团队第一次合作，算是一个很好的开始。',
     link: 'https://mp.weixin.qq.com/s/7Dsa782x0YqtVRijj-OC4Q',
     linkLabel: 'Coverage',
     linkLabelZh: '相关报道',
@@ -232,9 +233,9 @@ export const education = [
     role: 'B.Eng. in Computer Science and Technology (IEEE Pilot Class)',
     roleZh: '本科 · 计算机科学与技术（IEEE 试点班）',
     desc:
-      'GPA 3.92, top 20% of the major. Main courses: mathematical analysis, C++ programming, Python programming, data structures and algorithms, operating systems.',
+      'GPA 3.92, top 20% of the major.',
     descZh:
-      'GPA 3.92，专业排名前 20%。主修课程：数学分析、C++ 程序设计、Python 程序设计、数据结构与算法、操作系统。'
+      'GPA 3.92，专业排名前 20%。'
   }
 ];
 
