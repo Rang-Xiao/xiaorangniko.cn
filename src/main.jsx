@@ -257,7 +257,7 @@ function Hero({ lang }) {
       </div>
       <aside className="hero__aside">
         <div className="portrait">
-          <img src="/img/profile.jpg" alt={profile.name} />
+          <img src="/img/profile.jpg" alt={lang === 'zh' ? profile.nameZh : profile.name} />
           <div className="portrait__meta">
             <p><T en={profile.affiliation} zh={profile.affiliationZh} lang={lang} /></p>
             <h2>{lang === 'zh' ? profile.nameZh : profile.name}</h2>
@@ -466,7 +466,7 @@ function PaperCard({ paper, lang }) {
   const body = (
     <>
       <span className={`badge ${paper.level === 'ccf-a' ? 'badge--ccf-a' : ''} ${paper.level === 'journal' ? 'badge--journal' : ''}`}><T en={paper.levelLabel} zh={paper.levelLabelZh || paper.levelLabel} lang={lang} /></span>
-      <h3>{paper.title}</h3>
+      <h3><T en={paper.title} zh={paper.titleZh || paper.title} lang={lang} /></h3>
       <p><Html value={paper.authors} /></p>
       {(paper.intro || paper.introZh) && (
         <p className="paper-card__intro"><T en={paper.intro} zh={paper.introZh || paper.intro} lang={lang} /></p>
@@ -480,10 +480,10 @@ function PaperCard({ paper, lang }) {
       {paper.image && (
         paper.link ? (
           <a className="paper-card__media" href={paper.link} target="_blank" rel="noreferrer">
-            <img src={paper.image} alt={paper.title} />
+            <img src={paper.image} alt={lang === 'zh' ? paper.titleZh || paper.title : paper.title} />
           </a>
         ) : (
-          <div className="paper-card__media"><img src={paper.image} alt={paper.title} /></div>
+          <div className="paper-card__media"><img src={paper.image} alt={lang === 'zh' ? paper.titleZh || paper.title : paper.title} /></div>
         )
       )}
       <div className="paper-card__body">
@@ -528,7 +528,7 @@ function GameCard({ game, lang }) {
   return (
     <article className="game-card">
       <div className="video-frame">
-        <VideoEmbed src={game.video} title={game.name} poster={game.videoPoster} />
+        <VideoEmbed src={game.video} title={lang === 'zh' ? game.nameZh : game.name} poster={game.videoPoster} />
       </div>
       <div>
         <h3><T en={game.name} zh={game.nameZh} lang={lang} /></h3>

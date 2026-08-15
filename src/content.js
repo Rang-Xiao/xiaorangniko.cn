@@ -59,7 +59,8 @@ export const researchDirections = [
 
 export const publications = [
   {
-    title: '基于多层次优化的无人机烟幕投放策略研究',
+    title: 'Multilevel Optimization of UAV Smoke-Screen Deployment Strategies',
+    titleZh: '基于多层次优化的无人机烟幕投放策略研究',
     authors: '<u>Rang Xiao</u>',
     venue: 'Sep 2025',
     venueZh: '2025.09',
@@ -122,12 +123,12 @@ export const games = [
     video: '/media/castsyndrome.mp4',
     awardLinks: [
       {
-        label: 'Gold Award — Tencent LightSpeed Studios Game Competition',
+        label: 'Gold Award — Tencent LIGHTSPEED STUDIOS Game Competition',
         labelZh: '光子游戏大赛高校赛道金奖',
         href: '/awards.html#tencent-lightspeed'
       },
       {
-        label: 'First Prize & Best Innovation Award — NetEase Thunder Fire Collegiate Game Design Competition',
+        label: 'First Prize & Best Innovation Award — NetEase ThunderFire Collegiate Game Design Competition',
         labelZh: '网易雷火高校游戏设计大赛一等奖及最佳创新奖',
         href: '/awards.html#netease-thunder-fire'
       }
@@ -140,7 +141,7 @@ export const games = [
     ]
   },
   {
-    name: 'Unveiled Domain',
+    name: 'Unknowable Domain',
     nameZh: '不可知域',
     role: 'Lead Designer / Programmer',
     roleZh: '主策 / 程序',
@@ -185,7 +186,7 @@ export const games = [
     ]
   },
   {
-    name: 'Tale of a Bubble Boy',
+    name: 'Dream of the Goldfish',
     nameZh: '金鱼之梦',
     role: '2025 miHoYo Game Design Competition Entry',
     roleZh: '2025 米哈游策划大赛参赛作品',
@@ -237,7 +238,7 @@ export const awards = [
     result: '3rd place in the on-site vote',
     resultZh: '线下投票第三名',
     blurb:
-      'Over 500 teams from universities across China entered, and 32 made the finals. The 48-hour game jam tested our team’s creativity and execution under intense time pressure; our original entry, Unveiled Domain, placed third in the on-site vote.',
+      'Over 500 teams from universities across China entered, and 32 made the finals. The 48-hour game jam tested our team’s creativity and execution under intense time pressure; our original entry, Unknowable Domain, placed third in the on-site vote.',
     blurbZh:
       '500 余支来自中国高校的队伍参与，32 支进入决赛。决赛采用 48h Game Jam 形式，考验了我们团队短时间高强度下的创造力和执行力。我们的原创作品《不可知域》获得线下投票第三的好成绩。',
     link: 'https://mp.weixin.qq.com/s/pkc3OEa6kh4l0k7KmvEmSg',
@@ -247,14 +248,14 @@ export const awards = [
   },
   {
     id: 'tencent-lightspeed',
-    title: 'Tencent LightSpeed Studios Game Competition (college track)',
+    title: 'Tencent LIGHTSPEED STUDIOS Game Competition (College Track)',
     titleZh: '光子游戏大赛（高校赛道）',
     date: 'Jul 2026',
     dateZh: '2026.07',
-    result: 'Gold award',
+    result: 'Gold Award',
     resultZh: '金奖',
     blurb:
-      'An open game-making competition hosted by Tencent Photon Studios. It ran for seven months, drew over 5,200 entries, and offered a prize pool of more than CNY 2 million. Fighting through to win gold in the college track was a meaningful step forward for our team.',
+      'An open game-making competition hosted by Tencent LIGHTSPEED STUDIOS. It ran for seven months, drew over 5,200 entries, and offered a prize pool of more than CNY 2 million. Fighting through to win gold in the college track was a meaningful step forward for our team.',
     blurbZh:
       '光子面向全社会举办的游戏创作大赛，历时七个月，共有超过 5200 件作品参赛，总奖金池逾 200 万元。能一路披荆斩棘在高校赛道拿到金奖，对我们团队来说是一次不小的成长。',
     link: 'https://mp.weixin.qq.com/s/17hjCvhiTDES9XSQpdGzvw',
@@ -264,14 +265,14 @@ export const awards = [
   },
   {
     id: 'netease-thunder-fire',
-    title: 'SJTU Student Innovation × NetEase Thunder Fire Game Design Competition',
+    title: 'SJTU Student Innovation Center × NetEase ThunderFire Game Design Competition',
     titleZh: '交大学创 × 网易雷火高校游戏设计大赛',
     date: 'Dec 2025',
     dateZh: '2025.12',
-    result: 'First prize & Best Innovation award',
+    result: 'First Prize & Best Innovation Award',
     resultZh: '一等奖及最佳创新奖',
     blurb:
-      'Co-hosted by the SJTU Student Innovation Center and NetEase Thunder Fire, the competition brought together 20 SJTU teams. It was our team’s first collaboration and a lovely start to it.',
+      'Co-hosted by the SJTU Student Innovation Center and NetEase ThunderFire, the competition brought together 20 SJTU teams. It was our team’s first collaboration and a lovely start to it.',
     blurbZh:
       '由上海交通大学学生创新中心联合网易雷火举办，共有20支交大队伍参与。这是我们团队第一次合作，算是一个很好的开始。',
     link: 'https://mp.weixin.qq.com/s/7Dsa782x0YqtVRijj-OC4Q',
