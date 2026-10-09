@@ -112,8 +112,8 @@ export const games = [
   {
     name: 'Cast Syndrome',
     nameZh: '卡斯特症候群',
-    role: 'Producer / Programmer',
-    roleZh: '制作人 / 程序',
+    role: 'Designer / Programmer',
+    roleZh: '策划 / 程序',
     desc: 'Play as Cast, a phantom-thief girl who uses a viewfinder to warp through a neon city and pull off impossible capers.',
     descZh: '扮演怪盗少女小卡，利用取景框穿梭于霓虹都市，展开不可思议的行动。',
     detail:
@@ -143,8 +143,8 @@ export const games = [
   {
     name: 'Unveiled Domain',
     nameZh: '不可知域',
-    role: 'Lead Designer / Programmer',
-    roleZh: '主策 / 程序',
+    role: 'Designer / Programmer',
+    roleZh: '策划 / 程序',
     desc: 'A platformer where platforms disappear when they are obscured.',
     descZh: '平台跳跃游戏，但是平台被挡住就会消失。',
     detail:
@@ -188,8 +188,8 @@ export const games = [
   {
     name: 'Dream of the Goldfish',
     nameZh: '金鱼之梦',
-    role: '程序',
-    roleZh: 'Programmer',
+    role: 'Programmer',
+    roleZh: '程序',
     desc: 'A narrative puzzle game about life and friendship, told through a detailed world scene and hand-drawn illustrations.',
     descZh: '一款讲述友情与生命的剧情向解谜游戏，以细致场景和手绘插画呈现故事。',
     detail:
@@ -208,7 +208,7 @@ export const games = [
   },
   {
     name: 'Kitchen Chaos',
-    nameZh: '厨房',
+    nameZh: '混沌厨房',
     role: 'Solo Unity Learning Project',
     roleZh: 'Unity 个人学习项目',
     desc: 'Overcooked, but the two players can fight each other.',
