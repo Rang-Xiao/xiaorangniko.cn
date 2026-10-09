@@ -26,8 +26,7 @@ export const profile = {
 };
 
 export const heroMetrics = [
-  { value: '10+', valueZh: '10+', label: 'games developed', labelZh: '开发游戏数量' },
-  { value: '300k+', valueZh: '30w+', label: 'studio funding (CNY)', labelZh: '工作室资金' }
+  { value: '10+', valueZh: '10+', label: 'games developed', labelZh: '开发游戏数量' }
 ];
 
 export const researchDirections = [
