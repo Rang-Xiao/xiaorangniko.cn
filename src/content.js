@@ -26,7 +26,8 @@ export const profile = {
 };
 
 export const heroMetrics = [
-  { value: '10+', valueZh: '10+', label: 'games developed', labelZh: '开发游戏数量' }
+  { value: '10+', valueZh: '10+', label: 'games developed', labelZh: '开发游戏数量' },
+  { value: '200k+', valueZh: '20w+', label: 'total prize money won (CNY)', labelZh: '累计获得奖金' }
 ];
 
 export const researchDirections = [
@@ -243,7 +244,7 @@ export const awards = [
     link: 'https://mp.weixin.qq.com/s/pkc3OEa6kh4l0k7KmvEmSg',
     linkLabel: 'Coverage',
     linkLabelZh: '相关报道',
-    image: '/img/awards/neteaseminigame.JPG'
+    image: '/img/awards/neteaseminigame.JPG?v=20261009'
   },
   {
     id: 'tencent-lightspeed',
@@ -277,7 +278,7 @@ export const awards = [
     link: 'https://mp.weixin.qq.com/s/7Dsa782x0YqtVRijj-OC4Q',
     linkLabel: 'Coverage',
     linkLabelZh: '相关报道',
-    image: '/img/awards/neteasethunderfire.jpg'
+    image: '/img/awards/neteasethunderfire.jpg?v=20261009'
   }
 ];
 
